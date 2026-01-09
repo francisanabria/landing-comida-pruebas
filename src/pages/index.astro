@@ -1,16 +1,390 @@
 ---
+import "../styles/global.css"
 
+// Definición de colores y datos básicos para fácil edición
+const whatsappNumber = "1234567890"; // Cambia esto por tu número real
+const whatsappMessage = "Hallo, ich würde gerne mehr über das Menü von Mamey Latin Soul Food erfahren.";
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<html lang="en">
+<html lang="de" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Mamey Latin Soul Food</title>
+		<!-- Fuentes elegantes: Playfair Display (Titulos) y Lato (Texto) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
+
+		<!-- 1. NAVBAR -->
+		<nav class="fixed w-full z-50 text-white transition-all duration-300 shadow-lg">
+			<!-- Fondo con textura (Madera oscura) -->
+			<div class="absolute inset-0 -z-10 overflow-hidden bg-zinc-900">
+				<img src="https://images.unsplash.com/photo-1615803795039-3829ee30516d?q=80&w=2070&auto=format&fit=crop" alt="Textura Header" class="w-full h-full object-cover opacity-20" />
+				<div class="absolute inset-0 bg-zinc-900/90 backdrop-blur-sm"></div>
+			</div>
+
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center justify-between h-48">
+					<!-- Logo Nav -->
+					<div class="flex-shrink-0">
+						<a href="#home" class="block mt-8">
+							<img src="/images/fondo 3.png" alt="Mamey Logo" class="h-60 w-auto transition-transform hover:scale-105" />
+						</a>
+					</div>
+					
+					<!-- Desktop Menu -->
+					<div class="hidden md:block">
+						<div class="ml-10 flex items-baseline space-x-8">
+							<a href="#home" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Startseite</a>
+							<a href="#about" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Über uns</a>
+							<a href="#menu" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Speisekarte</a>
+							<a href="#historias" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Geschichten</a>
+							<a href="#contacto" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-lg font-medium transition-colors">Kontakt</a>
+						</div>
+					</div>
+
+					<!-- Mobile menu button -->
+					<div class="-mr-2 flex md:hidden">
+						<button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+							<span class="sr-only">Abrir menú</span>
+							<!-- Icono menu -->
+							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Mobile Menu Panel -->
+			<div class="md:hidden hidden border-t border-zinc-800/50" id="mobile-menu">
+				<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+					<a href="#home" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Startseite</a>
+					<a href="#about" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Über uns</a>
+					<a href="#menu" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Speisekarte</a>
+					<a href="#historias" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Geschichten</a>
+					<a href="#contacto" class="text-emerald-400 font-bold block px-3 py-2 rounded-md text-base">Kontakt</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- 2. HERO SECTION (HOME) -->
+		<section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+			<!-- Imagen de fondo con overlay oscuro -->
+			<div class="absolute inset-0 z-0">
+				<img 
+					src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" 
+					alt="Comida Latina Elegante" 
+					class="w-full h-full object-cover brightness-[0.6]"
+					class="w-full h-full object-cover brightness-[0.8]"
+				/>
+			</div>
+
+			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto reveal">
+				<!-- Logo Placeholder (Blanco) -->
+				<div class="mb-8 flex justify-center">
+					<!-- SUSTITUIR: src="/images/logo-blanco.png" -->
+					<img src="/images/logo-blanco.png" onerror="this.style.display='none'" alt="Mamey Logo" class="h-32 md:h-48 object-contain mx-auto mb-4 opacity-90" />
+					<!-- Fallback de texto si no carga la imagen -->
+					<h1 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-tight mb-2 hidden first:block">Mamey</h1>
+				</div>
+				
+				<h2 class="text-2xl md:text-4xl text-emerald-200 font-serif italic mb-6">Latin Soul Food</h2>
+				<p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-semibold">
+					Ein kulinarisches Erlebnis, das die Aromen, die Leidenschaft und die Eleganz unseres lateinamerikanischen Erbes feiert.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href={whatsappLink} target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+						Per WhatsApp reservieren
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. ABOUT (SOBRE NOSOTROS) -->
+		<section id="about" class="py-20 bg-zinc-50">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div class="order-2 md:order-1 reveal">
+						<div class="relative">
+							<!-- Imagen decorativa -->
+							<div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-200 rounded-full opacity-50 z-0"></div>
+							<img 
+								src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop" 
+								alt="Chef cocinando" 
+								class="relative z-10 rounded-lg shadow-2xl w-full h-[500px] object-cover"
+							/>
+							<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-zinc-800 rounded-lg -z-0"></div>
+						</div>
+					</div>
+					<div class="order-1 md:order-2 reveal">
+						<h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">Unsere Essenz</h3>
+						<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">Tradition mit einem modernen Touch</h2>
+						<p class="text-lg text-zinc-600 mb-6 leading-relaxed">
+							Bei <span class="font-bold text-zinc-800">Mamey</span> glauben wir, dass Essen die Sprache der Seele ist. Wir wurden mit der Mission geboren, die lateinamerikanische Gastronomie zu heben, indem wir die Rezepte unserer Großmütter mit zeitgenössischen Techniken und einer tadellosen Präsentation verschmelzen.
+						</p>
+						<p class="text-lg text-zinc-600 mb-8 leading-relaxed">
+							Jedes Gericht erzählt eine Geschichte, jede Zutat wird sorgfältig ausgewählt, um Sie in die wärmsten Ecken Lateinamerikas zu entführen.
+						</p>
+						<img src="/images/firma.png" onerror="this.style.display='none'" alt="Firma Chef" class="h-16 opacity-60" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 4. MENU (HIGHLIGHTS) -->
+		<section id="menu" class="py-20 bg-zinc-900 text-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16 reveal">
+					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Unsere Highlights</h2>
+					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
+					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Eine Auswahl unserer Favoriten. Kontaktieren Sie uns, um das komplette saisonale Menü kennenzulernen.</p>
+				</div>
+
+				<!-- Carrusel Container -->
+				<div class="relative px-0 md:px-12 reveal">
+					<!-- Botones de navegación (visibles en desktop) -->
+					<button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Anterior">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+					</button>
+					<button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Siguiente">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+					</button>
+
+					<!-- Scroll Area -->
+					<div id="menu-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
+						
+						<!-- Plato 1 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" 
+									alt="Ceviche Mamey" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ceviche Mamey</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Frischer Fang des Tages, Leche de Tigre mit Mamey-Infusion, knusprige Bananenchips und Avocado.</p>
+							</div>
+						</div>
+
+						<!-- Plato 2 (Imagen Corregida) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=2072&auto=format&fit=crop" 
+									alt="Lomo Saltado Royal" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Lomo Saltado Royal</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Feines Filet im Wok mit Zwiebeln und Tomaten sautiert, Rotweinreduktion, begleitet von Ají Amarillo Risotto.</p>
+							</div>
+						</div>
+
+						<!-- Plato 3 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1934&auto=format&fit=crop" 
+									alt="Tacos de Asada" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tacos Gourmet</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Handgemachte blaue Maistortilla, Premium-Asada-Fleisch, geröstete Molcajete-Salsa und gegrilltes Mark.</p>
+							</div>
+						</div>
+
+						<!-- Plato 4 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=2000&auto=format&fit=crop" 
+									alt="Arepas Reina Pepiada" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Arepas Reina</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Knuspriger weißer Maisteig, gefüllt mit unserem Hähnchensalat mit cremiger Avocado und frischem Koriander.</p>
+							</div>
+						</div>
+
+						<!-- Plato 5 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ropa Vieja</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Langsam in Tomatensauce und Gewürzen gekochtes gezupftes Rindfleisch, serviert mit Congrí-Reis und reifen Kochbananen.</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="text-center mt-12 reveal">
+					<a href={whatsappLink} class="inline-block border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full transition-colors uppercase tracking-wider text-sm font-bold">
+						Vollständiges Menü ansehen
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 5. HISTORIAS (ATMOSPHERE) -->
+		<section id="historias" class="py-20 bg-emerald-50">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 reveal">
+					<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900">Geschichten & Momente</h2>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div class="relative h-64 md:h-96 overflow-hidden rounded-lg reveal">
+						<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Ambiente restaurante">
+						<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-6 w-full">
+							<p class="text-white font-serif text-xl">"Das beste Ambiente zum Feiern"</p>
+						</div>
+					</div>
+					<div class="relative h-64 md:h-96 overflow-hidden rounded-lg reveal">
+						<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Cocteles">
+						<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-6 w-full">
+							<p class="text-white font-serif text-xl">"Signature Mixologie"</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CONTACTO / FOOTER -->
+		<section id="contacto" class="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-800">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left reveal">
+					
+					<!-- Columna 1: Logo y Info -->
+					<div class="flex flex-col items-center md:items-start">
+						<!-- SUSTITUIR: src="/images/logo-blanco.png" -->
+						<img src="/images/logo-blanco.png" onerror="this.style.display='none'" alt="Mamey Logo" class="h-24 mb-6 opacity-80" />
+						<h3 class="text-2xl font-serif text-white mb-4 block md:hidden">Mamey</h3>
+						<p class="text-sm leading-relaxed max-w-xs">
+							Latin Soul Food. Wo Eleganz auf Tradition trifft. Kommen Sie und erleben Sie es.
+						</p>
+					</div>
+
+					<!-- Columna 2: Contacto Directo -->
+					<div>
+						<h4 class="text-white font-bold uppercase tracking-widest mb-6">Kontaktieren Sie uns</h4>
+						<ul class="space-y-4">
+							<li class="flex items-center justify-center md:justify-start gap-3">
+								<svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+								<span>+1 (555) 123-4567</span>
+							</li>
+							<li class="flex items-center justify-center md:justify-start gap-3">
+								<svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+								<span>Hauptstraße 123, Stadt</span>
+							</li>
+							<li class="pt-4">
+								
+								<a href={whatsappLink} target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors">
+									<span>Auf WhatsApp schreiben</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Columna 3: Horarios -->
+					<div>
+						<h4 class="text-white font-bold uppercase tracking-widest mb-6">Öffnungszeiten</h4>
+						<ul class="space-y-2 text-sm">
+							<li class="flex justify-between md:justify-start gap-8">
+								<span class="text-emerald-500 font-bold">Mo - Do:</span>
+								<span>12:00 PM - 10:00 PM</span>
+							</li>
+							<li class="flex justify-between md:justify-start gap-8">
+								<span class="text-emerald-500 font-bold">Fr - Sa:</span>
+								<span>12:00 PM - 11:30 PM</span>
+							</li>
+							<li class="flex justify-between md:justify-start gap-8">
+								<span class="text-emerald-500 font-bold">Sonntag:</span>
+								<span>12:00 PM - 9:00 PM</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="border-t border-zinc-800 mt-12 pt-8 text-center text-xs text-zinc-500">
+					&copy; {new Date().getFullYear()} Mamey Latin Soul Food. Alle Rechte vorbehalten.
+				</div>
+			</div>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href={whatsappLink} target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			const btn = document.getElementById('mobile-menu-btn');
+			const menu = document.getElementById('mobile-menu');
+
+			if(btn && menu) {
+				btn.addEventListener('click', () => {
+					menu.classList.toggle('hidden');
+				});
+			}
+
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+		</script>
 	</body>
 </html>
