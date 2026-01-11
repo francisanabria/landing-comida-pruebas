@@ -30,18 +30,26 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 			</div>
 
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="flex items-center justify-between h-48">
+				<div class="flex items-center justify-between h-40 relative">
 					<!-- Logo Nav -->
-					<div class="flex-shrink-0">
-						<a href="#home" class="block mt-8">
-							<img src="/images/fondo 3.png" alt="Mamey Logo" class="h-60 w-auto transition-transform hover:scale-105" />
+										<!-- Logo Nav -->
+						<div
+						class="flex-shrink-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+								md:static md:translate-x-0 md:translate-y-0 md:mt-7 mt-4"
+						>
+						<a href="#home" class="block">
+							<img
+							src="/images/fondo 3.png"
+							alt="Mamey Logo"
+							class="h-41 sm:h-42 md:h-43 lg:h-44 w-auto transition-transform hover:scale-105"
+							/>
 						</a>
-					</div>
+						</div>
 					
 					<!-- Desktop Menu -->
 					<div class="hidden md:block">
-						<div class="ml-10 flex items-baseline space-x-8">
-							<a href="#home" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Startseite</a>
+						<div class="ml-10 flex items-baseline space-x-0">
+							<a href="#home" class="hover:text-emerald-400 px-3 py-2  rounded-md text-lg font-medium transition-colors">Startseite</a>
 							<a href="#about" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Über uns</a>
 							<a href="#menu" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Speisekarte</a>
 							<a href="#historias" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Geschichten</a>
@@ -50,11 +58,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 					</div>
 
 					<!-- Mobile menu button -->
-					<div class="-mr-2 flex md:hidden">
+					<div class="-mr-2 flex md:hidden ml-auto">
 						<button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
 							<span class="sr-only">Abrir menú</span>
 							<!-- Icono menu -->
-							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-14 w-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 							</svg>
 						</button>
