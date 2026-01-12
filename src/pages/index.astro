@@ -62,7 +62,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
 							<span class="sr-only">Abrir menú</span>
 							<!-- Icono menu -->
-							<svg class="h-14 w-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-14 w-14" xmlns="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 							</svg>
 						</button>
@@ -109,7 +109,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href={whatsappLink} target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+					<a href="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
 						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 						Per WhatsApp reservieren
 					</a>
@@ -185,8 +185,13 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 		 an deine Tür bringt – nach Hause, ins Büro oder wohin du möchtest. Bei Mamey 
 		 findest du Gerichte aus verschiedenen lateinamerikanischen Ländern, denn wir 
 		 glauben an Vielfalt, Farben und die Lebensfreude unserer Gastronomie.</p>
-		<p class="text-lg text-zinc-400 mb-8 leading-relaxed">
 
+		 <details class="mt-4">
+		<summary class="cursor-pointer text-emerald-600 font-semibold">
+			Ver más
+		</summary>
+
+		<p class="text-lg text-zinc-400 mb-8 leading-relaxed">
 		Mamey entsteht auch als Antwort auf das Fehlen eines Konzepts, das die Küche 
 		mehrerer Länder an einem Ort vereint. Unser Wunsch ist es, die lateinamerikanische
 		Gastronomie in ihrer ganzen Breite zu zeigen, unser Angebot stetig zu erweitern 
@@ -195,7 +200,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 		Wir arbeiten auf Vorbestellung, denn Qualität steht für uns an erster Stelle.</p>
 		<p class="text-lg text-zinc-400 mb-8 leading-relaxed">
 		So können wir jedes Gericht frisch, mit Sorgfalt und Respekt vor der Tradition zubereiten.</p>
-		
+		</details>
        
       </div>
 
@@ -224,7 +229,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 							<!-- Imagen decorativa -->
 							<div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-200 rounded-full opacity-50 z-0"></div>
 							<img 
-								src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop" 
+								src="public/images/chef.jpeg" 
 								alt="Chef cocinando" 
 								class="relative z-10 rounded-lg shadow-2xl w-full h-[500px] object-cover"
 							/>
@@ -232,6 +237,8 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						</div>
 					</div>
 					<div class="order-1 md:order-2 reveal">
+						
+
 						<h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">LERNE MICH KENNEN</h3>
 						<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">Unsere Chefköchin</h2>
 						<p class="text-lg text-zinc-900 mb-8 leading-relaxed">
@@ -250,6 +257,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 							zu lassen. Meine Ausbildung basiert auf Gourmetküche, kulinarischen
 							Techniken und professionellen Arbeitsweisen – ein Weg voller Kreativität,
 							Abenteuer und ständigem Lernen.</p>
+
+							<details class="mt-4">
+								<summary class="cursor-pointer text-emerald-600 font-semibold">
+									Ver más
+								</summary>
 							<p class="text-lg text-zinc-900 mb-8 leading-relaxed">
 							Viele Jahre arbeitete ich als Head Chef in verschiedenen Restaurants, 
 							leitete wunderbare Küchenteams, entwickelte Menüs und schuf neue kulinarische
@@ -272,7 +284,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 							<p class="text-lg text-zinc-900 mb-8 leading-relaxed">
 							Danke, dass du hier bist. </p>
 							
-						<img src="/images/firma.png" onerror="this.style.display='none'" alt="Firma Chef" class="h-16 opacity-60" />
+							</details>
 					</div>
 				</div>
 			</div>
@@ -282,9 +294,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 		<section id="menu" class="py-20 bg-zinc-900 text-white">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Unsere Highlights</h2>
+					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Hausspezialitäten</h2>
 					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
-					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Eine Auswahl unserer Favoriten. Kontaktieren Sie uns, um das komplette saisonale Menü kennenzulernen.</p>
+					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Qualität, Geschmack und Tradition in jedem Gericht.</p>
 				</div>
 
 				<!-- Carrusel Container -->
@@ -304,14 +316,16 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" 
+									src="public/images/milanesa.jpg" 
 									alt="Ceviche Mamey" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ceviche Mamey</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Frischer Fang des Tages, Leche de Tigre mit Mamey-Infusion, knusprige Bananenchips und Avocado.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Milanesa napolitana</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Zartes, paniertes Rind- oder Pouletschnitzel,
+									 belegt mit Tomatensauce und überbackenem Käse, serviert mit Beilage (Pommes oder Salat) – 
+									 ein argentinischer Klassiker voller Geschmack.</p>
 							</div>
 						</div>
 
@@ -319,14 +333,16 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=2072&auto=format&fit=crop" 
+									src="public/images/chaufa.jpg" 
 									alt="Lomo Saltado Royal" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Lomo Saltado Royal</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Feines Filet im Wok mit Zwiebeln und Tomaten sautiert, Rotweinreduktion, begleitet von Ají Amarillo Risotto.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Arroz Chaufa </h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Im peruanisch-chinesischen Stil gebratener Reis,
+									 gemischt mit saftigen Stücken Pouletfleisch, frischem Gemüse, Ei und Sojasauce – alles mit 
+									 dem unverwechselbaren, herzhaften Touch der peruanischen Küche.</p>
 							</div>
 						</div>
 
@@ -334,14 +350,15 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1934&auto=format&fit=crop" 
+									src="public/images/flautas.jpg" 
 									alt="Tacos de Asada" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tacos Gourmet</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Handgemachte blaue Maistortilla, Premium-Asada-Fleisch, geröstete Molcajete-Salsa und gegrilltes Mark.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Flautas de pollo</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Mit saftigem Pouletfleisch gefüllte Maistortillas, 
+									aufgerollt und knusprig frittiert, serviert mit frischen Beilagen wie Salat, Sauerrahm, Käse und Pico de Gallo.</p>
 							</div>
 						</div>
 
@@ -349,14 +366,14 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=2000&auto=format&fit=crop" 
-									alt="Arepas Reina Pepiada" 
+									src="public/images/chileno.jpg" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Arepas Reina</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Knuspriger weißer Maisteig, gefüllt mit unserem Hähnchensalat mit cremiger Avocado und frischem Koriander.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Completo chileno</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">KEin klassischer chilenischer Hotdog! Weiches Brötchen, saftige Wurst,
+									belegt mit frischen Tomaten, cremiger Avocado und hausgemachter Mayonnaise – einfach, herzhaft und unglaublich lecker.</p>
 							</div>
 						</div>
 
@@ -364,26 +381,126 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
+									src="public/images/chivito.jpg" 
 									alt="Ropa Vieja" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ropa Vieja</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Langsam in Tomatensauce und Gewürzen gekochtes gezupftes Rindfleisch, serviert mit Congrí-Reis und reifen Kochbananen.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Chivito</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein legendäres Sandwich aus Uruguay! Zartes Rindfleisch, Schinken, Käse, Ei,
+									 frischer Salat und saftige Tomaten im knusprigen Brötchen, serviert mit Pommes – herzhaft, sättigend und einfach zum Verlieben.</p>
 							</div>
 						</div>
-
+						
+						<!-- Plato 6 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/quesadillas.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Quesadillas</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Warme, goldene Weizentortillas gefüllt mit geschmolzenem Käse und 
+									saftiger Pouletbrust, verfeinert im Fajita-Stil. Serviert mit frischer Garnitur – Liebe und Geschmack in jedem Bissen.</p>
+							</div>
+						</div>
+						
+						<!-- Plato 7 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/empanadas.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Empanadas</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Goldbraune Teigtaschen, gefüllt mit würzigem Rindfleisch,
+									 Zwiebeln und einem Hauch Paprika – herzhaft, saftig und typisch argentinisch.</p>
+							</div>
+						</div>
+						
+						<!-- Plato 8 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/nachos.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Nachos</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Knusprige Maistortilla-Chips mit geschmolzenem Käse
+									 überbacken, dazu gezupfte Pouletbrust oder saftiges Rindfleisch, verfeinert mit Bohnenpüree,
+									 frischer Pico-de-Gallo-Salsa, cremiger Avocado und einem Hauch Sauerrahm – ein buntes Geschmackserlebnis aus Mexiko.</p>
+							</div>
+						</div>
+						
+						<!-- Plato 9 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/lomo.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Lomo saltado</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein peruanischer Klassiker! Zartes Rindfleisch,
+									 goldene Kartoffeln, Zwiebeln, Tomaten und ein Hauch Sojasauce – alles heiß im Wok geschwenkt.
+									  Aromatisch, farbenfroh und voller südamerikanischer Energie.</p>
+							</div>
+						</div>
+						
+						<!-- Plato 10 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/rice n beans.png" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Rice n beans caribeno </h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Reis und rote Bohnen in Kokosmilch nach karibischer
+									 Art gekocht, dazu zartes Pouletfleisch mit karibischer Sauce, knusprige Patacones und frischer Salat.</p>
+							</div>
+						</div>
+						<!-- Plato 11 (Nuevo) -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="public/images/picapollo.png" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Pica pollo </h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Knusprig frittierte Pouletteile – saftige 
+									Keulen und Schenkel nach dominikanischer Art, gewürzt mit karibischen Aromen und serviert 
+									mit knusprigen Tostones oder Pommes.
+									Ein echtes Stück Dominikanische Republik auf dem Teller.
+</p>
+							</div>
+						</div>
 					</div>
 				</div>
 
 			</div>
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Postres y Bebidas</h2>
+					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Desserts & Erfrischungen</h2>
 					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
-					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Eine Auswahl unserer Favoriten. Kontaktieren Sie uns, um das komplette saisonale Menü kennenzulernen.</p>
+					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Der süße und erfrischende Begleiter zu Ihrem Essen.</p>
 				</div>
 
 				<!-- Carrusel Container 2-->
@@ -480,7 +597,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 				
 
 				<div class="text-center mt-12 reveal">
-					<a href={whatsappLink} class="inline-block border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full transition-colors uppercase tracking-wider text-sm font-bold">
+					<a href="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" class="inline-block border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full transition-colors uppercase tracking-wider text-sm font-bold">
 						Vollständiges Menü ansehen
 					</a>
 				</div>
@@ -540,7 +657,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 							</li>
 							<li class="pt-4">
 								
-								<a href={whatsappLink} target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors">
+								<a href="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full inline-flex items-center gap-2 transition-colors">
 									<span>Auf WhatsApp schreiben</span>
 								</a>
 							</li>
@@ -574,7 +691,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 		<!-- BOTÓN FLOTANTE WHATSAPP -->
 		
-		<a href={whatsappLink} target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+		<a href="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
 			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 		</a>
 
