@@ -36,13 +36,13 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 										<!-- Logo Nav -->
 						<div
 						class="flex-shrink-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-								md:static md:translate-x-0 md:translate-y-0 md:mt-7 mt-4"
+								md:static md:translate-x-0 md:translate-y-0 md:mt-0 mt-4"
 						>
 						<a href="#home" class="block">
 							<img
 							src="/images/fondo 3.png"
 							alt="Mamey Logo"
-							class="h-41 sm:h-42 md:h-43 lg:h-44 w-auto transition-transform hover:scale-105"
+							class="h-40 md:h-36 w-auto transition-transform hover:scale-105"
 							/>
 						</a>
 						</div>
@@ -63,7 +63,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
 							<span class="sr-only">Abrir menú</span>
 							<!-- Icono menu -->
-							<svg class="h-14 w-14" xmlns="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-14 w-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 							</svg>
 						</button>
@@ -500,7 +500,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 			</div>
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Desserts & Erfrischungen</h2>
+					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Erfrischungen  &  Desserts</h2>
 					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
 					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Der süße und erfrischende Begleiter zu Ihrem Essen.</p>
 				</div>
@@ -509,94 +509,115 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 				<div class="relative px-0 md:px-12 reveal">
 					<!-- Botones de navegación (visibles en desktop) -->
 					<button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Anterior">
+					<button id="prev-slide-dessert" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Anterior">
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
 					</button>
 					<button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Siguiente">
+					<button id="next-slide-dessert" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Siguiente">
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
 					</button>
 
 					<!-- Scroll Area -->
 					<div id="menu-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
+					<div id="dessert-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
 						
-						<!-- Plato 1 -->
+						<!-- jugo 1 -->
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" 
+									src="/images/guayaba.jpeg" 
 									alt="Ceviche Mamey" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ceviche Mamey</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Frischer Fang des Tages, Leche de Tigre mit Mamey-Infusion, knusprige Bananenchips und Avocado.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Guavensaft</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein erfrischendes Getränk aus Guavenpüree, weich,
+									 aromatisch und natürlich süß. Jeder Schluck ist ein tropischer Frischekick.</p>
 							</div>
 						</div>
-
-						<!-- Plato 2 (Imagen Corregida) -->
+						<!-- jugo 2 -->
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=2072&auto=format&fit=crop" 
-									alt="Lomo Saltado Royal" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Lomo Saltado Royal</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Feines Filet im Wok mit Zwiebeln und Tomaten sautiert, Rotweinreduktion, begleitet von Ají Amarillo Risotto.</p>
-							</div>
-						</div>
-
-						<!-- Plato 3 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1934&auto=format&fit=crop" 
+									src="/images/tamarindo.jpeg" 
 									alt="Tacos de Asada" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tacos Gourmet</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Handgemachte blaue Maistortilla, Premium-Asada-Fleisch, geröstete Molcajete-Salsa und gegrilltes Mark.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tamarindensaft</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">HErfrischend und ausgewogen,
+									 mit einer natürlichen Säure, die die Sinne weckt. Ein authentischer, intensiver und harmonischer Geschmack.</p>
 							</div>
 						</div>
 
-						<!-- Plato 4 (Nuevo) -->
+
+						<!-- jugo 3 -->
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=2000&auto=format&fit=crop" 
+									src="/images/guanabana.jpeg" 
+									alt="Lomo Saltado Royal" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Stachelannone-Saft</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Sanft, leicht cremig und mit einem 
+									einzigartigen süß-säuerlichen Aroma. Ein exotisches Getränk, das den Gaumen mit Frische und Weichheit umhüllt.</p>
+							</div>
+						</div>
+
+						
+						<!-- postre 1-->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/tres leches.jpeg" 
 									alt="Arepas Reina Pepiada" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Arepas Reina</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Knuspriger weißer Maisteig, gefüllt mit unserem Hähnchensalat mit cremiger Avocado und frischem Koriander.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tres Leches</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein luftiger Kuchen, getränkt in
+									 drei cremigen Milchsorten. Klassisch, zart und himmlisch saftig – pure lateinamerikanische Liebe. </p>
 							</div>
 						</div>
-
-						<!-- Plato 5 (Nuevo) -->
+							<!-- Postre 2 -->
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
+									src="/images/pan de elote.jpeg" 
 									alt="Ropa Vieja" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Ropa Vieja</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Langsam in Tomatensauce und Gewürzen gekochtes gezupftes Rindfleisch, serviert mit Congrí-Reis und reifen Kochbananen.</p>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Pan de elote</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Weicher Maiskuchen mit goldener Kruste. Hausgemacht, warm und voller Liebe – pure Mamey-Vibes! </p>
 							</div>
 						</div>
 
+						<!-- Postre 3 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/alfajores.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Alfajores</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Zarte Kekse, gefüllt mit cremigem Dulce de Leche. Süß, verspielt und einfach unwiderstehlich! </p>
+							</div>
+						</div>
+
+
 					</div>
 				</div>
-
-				
 
 				<div class="text-center mt-12 reveal">
 					<a href="https://wa.me/41765229399?text=Hola%20quiero%20hacer%20un%20pedido" class="inline-block border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full transition-colors uppercase tracking-wider text-sm font-bold">
@@ -741,6 +762,20 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 				});
 				prevBtn.addEventListener('click', () => {
 					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
 				});
 			}
 
