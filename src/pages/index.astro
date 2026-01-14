@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css"
 
+import Slider from '../components/Slider.astro';
+
 // Definición de colores y datos básicos para fácil edición
 const whatsappNumber = "1234567890"; // Cambia esto por tu número real
 const whatsappMessage = "Hallo, ich würde gerne mehr über das Menü von Mamey Latin Soul Food erfahren.";
@@ -660,21 +662,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 				<div class="text-center mb-12 reveal">
 					<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900">Geschichten & Momente</h2>
 				</div>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<div class="relative h-64 md:h-96 overflow-hidden rounded-lg reveal">
-						<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Ambiente restaurante">
-						<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-6 w-full">
-							<p class="text-white font-serif text-xl">"Das beste Ambiente zum Feiern"</p>
-						</div>
-					</div>
-					<div class="relative h-64 md:h-96 overflow-hidden rounded-lg reveal">
-						<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Cocteles">
-						<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-6 w-full">
-							<p class="text-white font-serif text-xl">"Signature Mixologie"</p>
-						</div>
-					</div>
-				</div>
+				<Slider/>
 			</div>
 		</section>
 
