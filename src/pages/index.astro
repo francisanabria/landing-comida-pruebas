@@ -52,7 +52,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 							<a href="#home" class="hover:text-emerald-400 px-3 py-2  rounded-md text-lg font-medium transition-colors">Startseite</a>
 							<a href="#about" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Über uns</a>
 							<a href="#menu" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Speisekarte</a>
-							<a href="#historias" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Geschichten</a>
+							<a href="#historias" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Galerie</a>
 							<a href="#contacto" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-lg font-medium transition-colors">Kontakt</a>
 						</div>
 					</div>
@@ -76,7 +76,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 					<a href="#home" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Startseite</a>
 					<a href="#about" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Über uns</a>
 					<a href="#menu" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Speisekarte</a>
-					<a href="#historias" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Bewertungen</a>
+					<a href="#historias" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Galerie</a>
 					<a href="#contacto" class="text-emerald-400 font-bold block px-3 py-2 rounded-md text-base">Kontakt</a>
 				</div>
 			</div>
@@ -191,7 +191,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 		 <details class="mt-4">
 		<summary class="cursor-pointer text-emerald-600 font-semibold">
-			Menü öffnen
+			Mehr anzeigen
 		</summary>
 
 		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
@@ -263,7 +263,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 							<details class="mt-4">
 								<summary class="cursor-pointer text-emerald-600 font-semibold">
-									Menü öffnen
+									Mehr anzeigen
 								</summary>
 							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 							Viele Jahre arbeitete ich als Head Chef in verschiedenen Restaurants, 
@@ -319,175 +319,21 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
-									src="/images/milanesa.jpg" 
-									alt="Ceviche Mamey" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								<img src="/images/arg.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 34 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Milanesa napolitana</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed text-left">Zartes, paniertes Rind- oder Pouletschnitzel,
-									 belegt mit Tomatensauce und überbackenem Käse, serviert mit Beilage (Pommes oder Salat) – 
-									 ein argentinischer Klassiker voller Geschmack.</p>
-							</div>
-						</div>
-
-						<!-- Plato 2 (Imagen Corregida) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chaufa.jpg" 
-									alt="Lomo Saltado Royal" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								<img src="/images/peru.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 28 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Arroz Chaufa </h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Im peruanisch-chinesischen Stil gebratener Reis,
-									 gemischt mit saftigen Stücken Pouletfleisch, frischem Gemüse, Ei und Sojasauce – alles mit 
-									 dem unverwechselbaren, herzhaften Touch der peruanischen Küche.</p>
-							</div>
-						</div>
-
-						<!-- Plato 3 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/flautas.jpg" 
-									alt="Tacos de Asada" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								<img src="/images/mexico.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 25 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Flautas de pollo</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed ">Mit saftigem Pouletfleisch gefüllte Maistortillas, 
-									aufgerollt und knusprig frittiert, serviert mit frischen Beilagen wie Salat, Sauerrahm, Käse und Pico de Gallo.</p>
-							</div>
-						</div>
-
-						<!-- Plato 4 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chileno.jpg" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								<img src="/images/chile.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 20 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Completo chileno</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">KEin klassischer chilenischer Hotdog! Weiches Brötchen, saftige Wurst,
-									belegt mit frischen Tomaten, cremiger Avocado und hausgemachter Mayonnaise – einfach, herzhaft und unglaublich lecker.</p>
-							</div>
-						</div>
-
-						<!-- Plato 5 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chivito.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<img src="/images/uruguay.PNG" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 28 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Chivito</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein legendäres Sandwich aus Uruguay! Zartes Rindfleisch, Schinken, Käse, Ei,
-									 frischer Salat und saftige Tomaten im knusprigen Brötchen, serviert mit Pommes – herzhaft, sättigend und einfach zum Verlieben.</p>
-							</div>
-						</div>
-						
-						<!-- Plato 6 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/quesadillas.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								<img src="/images/mexico.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 27 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Quesadillas</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Warme, goldene Weizentortillas gefüllt mit geschmolzenem Käse und 
-									saftiger Pouletbrust, verfeinert im Fajita-Stil. Serviert mit frischer Garnitur – Liebe und Geschmack in jedem Bissen.</p>
-							</div>
-						</div>
-						
-						<!-- Plato 7 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/empanadas.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<img src="/images/arg.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 22 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Empanadas</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Goldbraune Teigtaschen, gefüllt mit würzigem Rindfleisch,
-									 Zwiebeln und einem Hauch Paprika – herzhaft, saftig und typisch argentinisch.</p>
-							</div>
-						</div>
-						
-						<!-- Plato 8 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/nachos.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<img src="/images/mexico.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 28 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Nachos</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Knusprige Maistortilla-Chips mit geschmolzenem Käse
-									 überbacken, dazu gezupfte Pouletbrust oder saftiges Rindfleisch, verfeinert mit Bohnenpüree,
-									 frischer Pico-de-Gallo-Salsa, cremiger Avocado und einem Hauch Sauerrahm – ein buntes Geschmackserlebnis aus Mexiko.</p>
-							</div>
-						</div>
-						
-						<!-- Plato 9 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/lomo.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<img src="/images/peru.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 36 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Lomo saltado</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein peruanischer Klassiker! Zartes Rindfleisch,
-									 goldene Kartoffeln, Zwiebeln, Tomaten und ein Hauch Sojasauce – alles heiß im Wok geschwenkt.
-									  Aromatisch, farbenfroh und voller südamerikanischer Energie.</p>
-							</div>
-						</div>
-						
-						<!-- Plato 10 (Nuevo) -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
 									src="/images/rice n beans.PNG" 
 									alt="Ropa Vieja" 
 									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
 								/>
 							</div>
 							<div class="p-6">
-								<img src="/images/cr.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 36 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Rice n beans caribeno </h3>
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/cr.png" class="inline w-10 h-10 align-middle" />  Rice n beans  </h3>
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2 pl-12">caribeno</h3>
 								<p class="text-zinc-400 text-sm leading-relaxed">Reis und rote Bohnen in Kokosmilch nach karibischer
 									 Art gekocht, dazu zartes Pouletfleisch mit karibischer Sauce, knusprige Patacones und frischer Salat.</p>
+									 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 36 CHF</span>
 							</div>
 						</div>
-						<!-- Plato 11 (Nuevo) -->
+						<!-- Plato 2 -->
 						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
 							<div class="overflow-hidden h-64">
 								<img 
@@ -497,15 +343,181 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 								/>
 							</div>
 							<div class="p-6">
-								<img src="/images/rd.png" class="inline w-10 h-10 align-middle" /><span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 28 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Pica pollo </h3>
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/rd.png" class="inline w-10 h-10 align-middle" />  Pica pollo </h3>
 								<p class="text-zinc-400 text-sm leading-relaxed">Knusprig frittierte Pouletteile – saftige 
 									Keulen und Schenkel nach dominikanischer Art, gewürzt mit karibischen Aromen und serviert 
 									mit knusprigen Tostones oder Pommes.
 									Ein echtes Stück Dominikanische Republik auf dem Teller.</p>
+									<span class="font-bold text-shadow-amber-50 font-serif text-21l"> 28 CHF</span>
 </p>
 							</div>
 						</div>
+							<!-- Plato 3 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/chileno.jpg" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6 ">
+							
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/chile.png" class="inline w-10 h-10 align-middle" />  Completo chileno</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">KEin klassischer chilenischer Hotdog! Weiches Brötchen, saftige Wurst,
+									belegt mit frischen Tomaten, cremiger Avocado und hausgemachter Mayonnaise – einfach, herzhaft und unglaublich lecker.</p>
+									<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 20 CHF</span>
+							</div>
+						</div>
+						<!-- Plato 4 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/milanesa.jpg" 
+									alt="Ceviche Mamey" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6 ">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Milanesa napolitana</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed text-left">Zartes, paniertes Rind- oder Pouletschnitzel,
+									 belegt mit Tomatensauce und überbackenem Käse, serviert mit Beilage (Pommes oder Salat) – 
+									 ein argentinischer Klassiker voller Geschmack.</p>
+									 <p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 34 CHF</p>
+							</div>
+						</div>
+						
+						<!-- Plato 5 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/flautas.jpg" 
+									alt="Tacos de Asada" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6 ">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Flautas de pollo</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed ">Mit saftigem Pouletfleisch gefüllte Maistortillas, 
+									aufgerollt und knusprig frittiert, serviert mit frischen Beilagen wie Salat, Sauerrahm, Käse und Pico de Gallo.</p>
+									<span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 25 CHF</span>
+							</div>
+						</div>
+							<!-- Plato 6 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/chivito.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+							
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/uruguay.PNG" class="inline w-10 h-10 align-middle" />  Chivito</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein legendäres Sandwich aus Uruguay! Zartes Rindfleisch, Schinken, Käse, Ei,
+									 frischer Salat und saftige Tomaten im knusprigen Brötchen, serviert mit Pommes – herzhaft, sättigend und einfach zum Verlieben.</p>
+									 	<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
+							</div>
+						</div>
+							<!-- Plato 7-->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/lomo.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Lomo saltado</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Ein peruanischer Klassiker! Zartes Rindfleisch,
+									 goldene Kartoffeln, Zwiebeln, Tomaten und ein Hauch Sojasauce – alles heiß im Wok geschwenkt.
+									  Aromatisch, farbenfroh und voller südamerikanischer Energie.</p>
+									  <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
+							</div>
+						</div>
+						
+						<!-- Plato 8 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/quesadillas.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6 ">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Quesadillas</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Warme, goldene Weizentortillas gefüllt mit geschmolzenem Käse und 
+									saftiger Pouletbrust, verfeinert im Fajita-Stil. Serviert mit frischer Garnitur – Liebe und Geschmack in jedem Bissen.</p>
+									<span class="font-bold text-shadow-amber-50 font-serif text-1xl"> 27 CHF</span>
+							</div>
+						</div>
+						
+						<!-- Plato 9 -->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/empanadas.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+							
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Empanadas</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Goldbraune Teigtaschen, gefüllt mit würzigem Rindfleisch,
+									 Zwiebeln und einem Hauch Paprika – herzhaft, saftig und typisch argentinisch.</p>
+									 	<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 22 CHF</span>
+							</div>
+						</div>
+						
+						<!-- Plato 10-->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/chaufa.jpg" 
+									alt="Lomo Saltado Royal" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6 ">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Arroz Chaufa </h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Im peruanisch-chinesischen Stil gebratener Reis,
+									 gemischt mit saftigen Stücken Pouletfleisch, frischem Gemüse, Ei und Sojasauce – alles mit 
+									 dem unverwechselbaren, herzhaften Touch der peruanischen Küche.</p><p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 28 CHF</p>
+							</div>
+						</div>
+
+						<!-- Plato 11-->
+						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+							<div class="overflow-hidden h-64">
+								<img 
+									src="/images/nachos.jpg" 
+									alt="Ropa Vieja" 
+									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								/>
+							</div>
+							<div class="p-6">
+								
+								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Nachos</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed">Knusprige Maistortilla-Chips mit geschmolzenem Käse
+									 überbacken, dazu gezupfte Pouletbrust oder saftiges Rindfleisch, verfeinert mit Bohnenpüree,
+									 frischer Pico-de-Gallo-Salsa, cremiger Avocado und einem Hauch Sauerrahm – ein buntes Geschmackserlebnis aus Mexiko.</p>
+									 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
+							</div>
+						</div>
+						
+					
+						
+						
+						
 					</div>
 				</div>
 
