@@ -2,6 +2,12 @@
 import "../styles/global.css"
 
 import Slider from '../components/Slider.astro';
+import Navbar from '../components/Navbar.astro';
+import Home from '../components/Home.astro';
+import Pilosophie from '../components/Pilosophie.astro';
+import History from '../components/History.astro';
+import Chef from '../components/Chef.astro';
+import Menu from '../components/Menu.astro';
 
 // Definición de colores y datos básicos para fácil edición
 const whatsappNumber = "1234567890"; // Cambia esto por tu número real
@@ -25,646 +31,27 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 	<body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
 
 		<!-- 1. NAVBAR -->
-		<nav class="fixed w-full z-50 text-white transition-all duration-300 shadow-lg">
-			<!-- Fondo con textura (Madera oscura) -->
-			<div class="absolute inset-0 -z-10 overflow-hidden bg-zinc-900">
-				<img src="https://images.unsplash.com/photo-1615803795039-3829ee30516d?q=80&w=2070&auto=format&fit=crop" alt="Textura Header" class="w-full h-full object-cover opacity-20" />
-				<div class="absolute inset-0 bg-zinc-900/90 backdrop-blur-sm"></div>
-			</div>
-
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="flex items-center justify-between h-40 relative">
-					<!-- Logo Nav -->
-						<div
-						class="flex-shrink-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-								md:static md:translate-x-0 md:translate-y-0 md:mt-0 mt-4"
-						>
-						<a href="#home" class="block">
-							<img
-							src="/images/fondo 3.png"
-							alt="Mamey Logo"
-							class="h-40 md:h-36 w-auto transition-transform hover:scale-105"
-							/>
-						</a>
-						</div>
-					
-					<!-- Desktop Menu -->
-					<div class="hidden md:block">
-						<div class="ml-10 flex items-baseline space-x-0">
-							<a href="#home" class="hover:text-emerald-400 px-3 py-2  rounded-md text-lg font-medium transition-colors">Startseite</a>
-							<a href="#about" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Über uns</a>
-							<a href="#menu" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Speisekarte</a>
-							<a href="#historias" class="hover:text-emerald-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">Galerie</a>
-							<a href="#contacto" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-lg font-medium transition-colors">Kontakt</a>
-						</div>
-					</div>
-
-					<!-- Mobile menu button -->
-					<div class="-mr-2 flex md:hidden ml-auto">
-						<button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
-							<span class="sr-only">Menü öffnen</span>
-							<!-- Icono menu -->
-							<svg class="h-14 w-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- Mobile Menu Panel -->
-			<div class="md:hidden hidden border-t border-zinc-800/50" id="mobile-menu">
-				<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-					<a href="#home" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Startseite</a>
-					<a href="#about" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Über uns</a>
-					<a href="#menu" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Speisekarte</a>
-					<a href="#historias" class="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium">Galerie</a>
-					<a href="#contacto" class="text-emerald-400 font-bold block px-3 py-2 rounded-md text-base">Kontakt</a>
-				</div>
-			</div>
-		</nav>
+		<Navbar />
 
 		<!-- 2. HERO SECTION (HOME) -->
-		<section translate="yes" id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-			<!-- Imagen de fondo con overlay oscuro -->
-			<div class="absolute inset-0 z-0">
-				<img 
-					src="/images/home 2.jpeg"
-					alt="Comida Latina Elegante" 
-					class="w-full h-full object-cover brightness-[0.6]"
-					
-				/>
-			</div>
-
-			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto reveal">
-				<!-- Logo Placeholder (Blanco) -->
-				<div class="mb-8 flex justify-center">
-					<!-- SUSTITUIR: src="/images/logo-blanco.png" -->
-					<img src="/images/logo-blanco.png" onerror="this.style.display='none'" alt="Mamey Logo" class="h-32 md:h-48 object-contain mx-auto mb-4 opacity-90" />
-					<!-- Fallback de texto si no carga la imagen -->
-					<h1 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-tight mb-2 hidden first:block">Mamey</h1>
-				</div>
-				
-				<h2 class="text-2xl md:text-4xl text-emerald-200 font-serif italic mb-6">Latin Soul Food</h2>
-				<p translate="yes" class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-semibold">
-					 Wo Liebe, Tradition und lateinamerikanische Seele auf dem Teller zusammenkommen
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="https://wa.me/41765229399?" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-						Per WhatsApp reservieren
-					</a>
-				</div>
-			</div>
-		</section>
+		<Home />
 
 		<!-- 3. ABOUT (SOBRE NOSOTROS) -->
-		<section translate="yes" id="about" class="py-20 bg-zinc-50">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-					<div class="order-2 md:order-1 reveal">
-						<div class="relative">
-							<!-- Imagen decorativa -->
-							<div class="absolute -top-4 -left-4 w-24 h-24  bg-emerald-500 rounded-full z-0"></div>
-							<img 
-								src="/images/ritmo.jpeg" 
-								alt="Chef cocinando" 
-								class="relative z-10 w-full h-[260px] sm:h-[320px] md:h-[500px] rounded-lg shadow-2xl object-cover"
-								/>
-						
-							<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-emerald-500 rounded-lg z-0"></div>
-						</div>
-					</div>
-					<div class="order-1 md:order-2 reveal">
-						<h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">Unsere Pilosophie</h3>
-						<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">Der Rhythmus unserer Kultur auf deinem Tisch</h2>
-						<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							In Lateinamerika ist<span class="font-bold text-zinc-800"> Mamey</span>
-							
-							mehr als nur eine Frucht,
-							Sie ist Erinnerung, Begegnung und Rhythmus.
-							Ihre intensive Süße bewahrt die Wärme gemeinsamer Momente,
-							die Musik, die durch offene Türen strömt,
-							und das Lachen, das an einem liebevoll gedeckten Tisch entsteht.
-						</p>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-             				Deshalb trägt unser Projekt den Namen Mamey.
-							Wir bringen diesen Geist der Verbundenheit in jedes Gericht,
-							indem wir Tradition mit einem modernen Touch verbinden:
-							authentisch, raffiniert und voller Seele.</p>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Mamey steht für Geschmack, Zuhause und lateinamerikanisches Erbe,
-							serviert mit Liebe und dem Rhythmus unserer Kultur.</p>
-						
-					</div>
-				</div>
-			</div>
-		</section>
+		<Pilosophie />
 
-		  <!-- ABOUT (NUESTRA HISTORIA) -->
-		<section translate="yes" id="history" class="py-20  bg-zinc-900 ">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
+		<!-- ABOUT (NUESTRA HISTORIA) -->
+		<History />
 
-    
-      <div class="order-1 reveal ">
-        <h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">
-        UNSERE GESCHICHTE
-        </h3>
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white
-	 mb-6">
-          So entsteht Mamey
-        </h2>
-        <p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-          <span class="font-bold text-white">Mamey</span> 
-		  ist ein Herzensprojekt, das entstanden ist, um ein Stück der großen 
-		  Vielfalt der lateinamerikanischen Küche nach Winterthur zu bringen.
-		</p>
-		  <p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-		Wir teilen Aromen, die nach Zuhause schmecken – nach Familie, Erinnerungen 
-		und der Leidenschaft, mit der echte Küche entsteht.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-		Auch wenn wir kein klassisches Restaurant mit Tischen sind, sind wir ein To Go-
-		 und Delivery-Konzept, das dir eine besondere, authentische Alternative direkt 
-		 an deine Tür bringt – nach Hause, ins Büro oder wohin du möchtest. Bei Mamey 
-		 findest du Gerichte aus verschiedenen lateinamerikanischen Ländern, denn wir 
-		 glauben an Vielfalt, Farben und die Lebensfreude unserer Gastronomie.</p>
-
-		 <details class="mt-4">
-		<summary class="cursor-pointer text-emerald-600 font-semibold">
-			Mehr anzeigen
-		</summary>
-
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-		Mamey entsteht auch als Antwort auf das Fehlen eines Konzepts, das die Küche 
-		mehrerer Länder an einem Ort vereint. Unser Wunsch ist es, die lateinamerikanische
-		Gastronomie in ihrer ganzen Breite zu zeigen, unser Angebot stetig zu erweitern 
-		und immer wieder neue Gerichte aus verschiedenen Regionen Lateinamerikas hinzuzufügen.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-		Wir arbeiten auf Vorbestellung, denn Qualität steht für uns an erster Stelle.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-		So können wir jedes Gericht frisch, mit Sorgfalt und Respekt vor der Tradition zubereiten.</p>
-		</details>
-       
-      </div>
-
-      <!-- IMAGEN (DERECHA) -->
-      <div class="order-2 reveal">
-        <div class="relative">
-          <div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-500 rounded-full z-0 "></div>
-          <img
-            src="/images/mapa.jpeg"
-            class="relative z-10 w-full h-[260px] sm:h-[320px] md:h-[500px] rounded-lg shadow-2xl object-cover"
-          />
-          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-emerald-500  rounded-lg z-0"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-	<!-- 3. ABOUT (CONOCEME) -->
-		<section translate="yes" id="chef" class="py-10 bg-zinc-50">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-					<div class="order-2 md:order-1 reveal">
-						<div class="relative">
-							<!-- Imagen decorativa -->
-							<div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-500 rounded-full  z-0"></div>
-							<img 
-								src="/images/chef.jpeg" 
-								alt="Chef cocinando" 
-								class="relative z-10 w-full h-[260px] sm:h-[320px] md:h-[500px] rounded-lg shadow-2xl object-cover"
-							/>
-							<div class="absolute -bottom-4 -right-4 w-32 h-32  bg-emerald-500 rounded-lg -z-0"></div>
-						</div>
-					</div>
-					<div class="order-1 md:order-2 reveal">
-						
-
-						<h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">LERNE MICH KENNEN</h3>
-						<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">Unsere Chefköchin</h2>
-						<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Hallo! Ich bin Ninoska Smith Borgen, gebürtig aus Costa Rica. Ich bin
-							 im karibischen Teil Costa Ricas aufgewachsen, umgeben von Strand, 
-							 herzlichen Menschen und vielen lachenden Momenten. Diese fröhliche
-							  Umgebung hat mich geprägt und ist bis heute Teil meiner Persönlichkeit.</p>
-							
-		
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-             				Ich bin Anthropologin von Beruf und liebe die Kultur. Auf meinem beruflichen
-							 Weg wuchs meine Leidenschaft für die Gastronomie, als ich sah, wie Essen 
-							 Menschen verbindet, Familien zusammenbringt und Traditionen von Generation
-							zu Generation weitergegeben werden. Diese Verbindung zwischen Kultur und 
-							 Küche bewegte mich dazu, mich in Costa Rica professionell zur Köchin ausbilden 
-							zu lassen. Meine Ausbildung basiert auf Gourmetküche, kulinarischen
-							Techniken und professionellen Arbeitsweisen – ein Weg voller Kreativität,
-							Abenteuer und ständigem Lernen.</p>
-
-							<details class="mt-4">
-								<summary class="cursor-pointer text-emerald-600 font-semibold">
-									Mehr anzeigen
-								</summary>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Viele Jahre arbeitete ich als Head Chef in verschiedenen Restaurants, 
-							leitete wunderbare Küchenteams, entwickelte Menüs und schuf neue kulinarische
-							 Erlebnisse mit unterschiedlichen Konzepten.</p>
-							 <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Aus Liebe zog ich in dieses wunderschöne Land, die Schweiz. Mein Mann stammt
-							 aus Winterthur, hier leben wir gemeinsam mit unseren zwei Kindern als Familie.
-							Die Schweiz hat mich herzlich aufgenommen, ich fühle mich hier sehr wohl und zuhause.
-							Es begann für mich ein neuer Lebensabschnitt, und ich habe mir hier ein neues Leben aufgebaut.</p>
-							 <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Aus dieser Erfahrung heraus entstand dieses Projekt, mit dem Wunsch, ein Stück meiner 
-							lateinamerikanischen Kultur durch die Küche weiterzugeben und einen Ort zu schaffen, 
-							an dem Geschmack, Identität und Tradition zusammenkommen.</p>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Ich wünsche mir, dass sich alle, die sich Mamey nähern, willkommen fühlen,
-							mir schreiben, mit mir sprechen und mir ihre kulinarischen Wünsche mitteilen
-							 können. Nähe und Herzlichkeit sind mir genauso wichtig wie guter Geschmack.</p>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Dies ist ein Ort, an dem Essen verbindet, berührt und unsere Kulturen feiert.</p>
-							<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
-							Danke, dass du hier bist. </p>
-							
-							</details>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- 3. ABOUT (CONOCEME) -->
+		<Chef />
 
 		<!-- 4. MENU (HIGHLIGHTS) -->
-		<section translate="yes" id="menu" class="py-20 bg-zinc-900 text-white">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-16 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Hausspezialitäten</h2>
-					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
-					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Qualität, Geschmack und Tradition in jedem Gericht.</p>
-				</div>
-
-				<!-- Carrusel Container -->
-				<div class="relative px-0 md:px-12 reveal">
-					<!-- Botones de navegación (visibles en desktop) -->
-					<button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Anterior">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-					</button>
-					<button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Siguiente">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-					</button>
-
-					<!-- Scroll Area -->
-					<div id="menu-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
-						
-						<!-- Plato 1 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/rice n beans.PNG" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/cr.png" class="inline w-10 h-10 align-middle" />  Rice n beans  </h3>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2 pl-12">caribeno</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Reis und rote Bohnen in Kokosmilch nach karibischer
-									 Art gekocht, dazu zartes Pouletfleisch mit karibischer Sauce, knusprige Patacones und frischer Salat.</p>
-									 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 36 CHF</span>
-							</div>
-						</div>
-						<!-- Plato 2 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/picapollo.png" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/rd.png" class="inline w-10 h-10 align-middle" />  Pica pollo </h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Knusprig frittierte Pouletteile – saftige 
-									Keulen und Schenkel nach dominikanischer Art, gewürzt mit karibischen Aromen und serviert 
-									mit knusprigen Tostones oder Pommes.
-									Ein echtes Stück Dominikanische Republik auf dem Teller.</p>
-									<span class="font-bold text-shadow-amber-50 font-serif text-21l"> 28 CHF</span>
-</p>
-							</div>
-						</div>
-							<!-- Plato 3 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chileno.jpg" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-							
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/chile.png" class="inline w-10 h-10 align-middle" />  Completo chileno</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">KEin klassischer chilenischer Hotdog! Weiches Brötchen, saftige Wurst,
-									belegt mit frischen Tomaten, cremiger Avocado und hausgemachter Mayonnaise – einfach, herzhaft und unglaublich lecker.</p>
-									<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 20 CHF</span>
-							</div>
-						</div>
-						<!-- Plato 4 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/milanesa.jpg" 
-									alt="Ceviche Mamey" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Milanesa napolitana</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed text-left">Zartes, paniertes Rind- oder Pouletschnitzel,
-									 belegt mit Tomatensauce und überbackenem Käse, serviert mit Beilage (Pommes oder Salat) – 
-									 ein argentinischer Klassiker voller Geschmack.</p>
-									 <p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 34 CHF</p>
-							</div>
-						</div>
-						
-						<!-- Plato 5 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/flautas.jpg" 
-									alt="Tacos de Asada" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Flautas de pollo</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed ">Mit saftigem Pouletfleisch gefüllte Maistortillas, 
-									aufgerollt und knusprig frittiert, serviert mit frischen Beilagen wie Salat, Sauerrahm, Käse und Pico de Gallo.</p>
-									<span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 25 CHF</span>
-							</div>
-						</div>
-							<!-- Plato 6 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chivito.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-							
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/uruguay.PNG" class="inline w-10 h-10 align-middle" />  Chivito</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein legendäres Sandwich aus Uruguay! Zartes Rindfleisch, Schinken, Käse, Ei,
-									 frischer Salat und saftige Tomaten im knusprigen Brötchen, serviert mit Pommes – herzhaft, sättigend und einfach zum Verlieben.</p>
-									 	<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
-							</div>
-						</div>
-							<!-- Plato 7-->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/lomo.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Lomo saltado</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein peruanischer Klassiker! Zartes Rindfleisch,
-									 goldene Kartoffeln, Zwiebeln, Tomaten und ein Hauch Sojasauce – alles heiß im Wok geschwenkt.
-									  Aromatisch, farbenfroh und voller südamerikanischer Energie.</p>
-									  <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
-							</div>
-						</div>
-						
-						<!-- Plato 8 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/quesadillas.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Quesadillas</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Warme, goldene Weizentortillas gefüllt mit geschmolzenem Käse und 
-									saftiger Pouletbrust, verfeinert im Fajita-Stil. Serviert mit frischer Garnitur – Liebe und Geschmack in jedem Bissen.</p>
-									<span class="font-bold text-shadow-amber-50 font-serif text-1xl"> 27 CHF</span>
-							</div>
-						</div>
-						
-						<!-- Plato 9 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/empanadas.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-							
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Empanadas</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Goldbraune Teigtaschen, gefüllt mit würzigem Rindfleisch,
-									 Zwiebeln und einem Hauch Paprika – herzhaft, saftig und typisch argentinisch.</p>
-									 	<span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 22 CHF</span>
-							</div>
-						</div>
-						
-						<!-- Plato 10-->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/chaufa.jpg" 
-									alt="Lomo Saltado Royal" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6 ">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Arroz Chaufa </h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Im peruanisch-chinesischen Stil gebratener Reis,
-									 gemischt mit saftigen Stücken Pouletfleisch, frischem Gemüse, Ei und Sojasauce – alles mit 
-									 dem unverwechselbaren, herzhaften Touch der peruanischen Küche.</p><p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 28 CHF</p>
-							</div>
-						</div>
-
-						<!-- Plato 11-->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/nachos.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Nachos</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Knusprige Maistortilla-Chips mit geschmolzenem Käse
-									 überbacken, dazu gezupfte Pouletbrust oder saftiges Rindfleisch, verfeinert mit Bohnenpüree,
-									 frischer Pico-de-Gallo-Salsa, cremiger Avocado und einem Hauch Sauerrahm – ein buntes Geschmackserlebnis aus Mexiko.</p>
-									 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 28 CHF</span>
-							</div>
-						</div>
-						
-					
-						
-						
-						
-					</div>
-				</div>
-
-			</div>
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-16 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Erfrischungen  &  Desserts</h2>
-					<div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
-					<p class="mt-4 text-zinc-400 max-w-2xl mx-auto">Der süße und erfrischende Begleiter zu Ihrem Essen.</p>
-				</div>
-
-				<!-- Carrusel Container 2-->
-				<div class="relative px-0 md:px-12 reveal">
-					<!-- Botones de navegación (visibles en desktop) -->
-					<button id="prev-slide-dessert" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Anterior">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-					</button>
-					<button id="next-slide-dessert" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-emerald-600/80 hover:bg-emerald-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hidden md:block hover:scale-110" aria-label="Siguiente">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-					</button>
-
-					<!-- Scroll Area -->
-					<div id="dessert-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
-						
-						<!-- jugo 1 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/guayaba.jpeg" 
-									alt="Ceviche Mamey" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 7 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"> Guayaba saft</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein erfrischendes Getränk aus Guavenpüree, weich,
-									 aromatisch und natürlich süß. Jeder Schluck ist ein tropischer Frischekick.</p>
-							</div>
-						</div>
-						<!-- jugo 2 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/tamarindo.jpeg" 
-									alt="Tacos de Asada" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 7 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tamarindo saft</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">HErfrischend und ausgewogen,
-									 mit einer natürlichen Säure, die die Sinne weckt. Ein authentischer, intensiver und harmonischer Geschmack.</p>
-							</div>
-						</div>
-
-
-						<!-- jugo 3 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/guanabana.jpeg" 
-									alt="Lomo Saltado Royal" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 7 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"> Guanabana Saft</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Sanft, leicht cremig und mit einem 
-									einzigartigen süß-säuerlichen Aroma. Ein exotisches Getränk, das den Gaumen mit Frische und Weichheit umhüllt.</p>
-							</div>
-						</div>
-
-						
-						<!-- postre 1-->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/tres leches.jpeg" 
-									alt="Arepas Reina Pepiada" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 9 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tres Leches</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Ein luftiger Kuchen, getränkt in
-									 drei cremigen Milchsorten. Klassisch, zart und himmlisch saftig – pure lateinamerikanische Liebe. </p>
-							</div>
-						</div>
-							<!-- Postre 2 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/pan de elote.jpeg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 8 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Pan de elote</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Weicher Maiskuchen mit goldener Kruste. Hausgemacht, warm und voller Liebe – pure Mamey-Vibes! </p>
-							</div>
-						</div>
-
-						<!-- Postre 3 -->
-						<div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-							<div class="overflow-hidden h-64">
-								<img 
-									src="/images/alfajores.jpg" 
-									alt="Ropa Vieja" 
-									class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-								/>
-							</div>
-							<div class="p-6">
-								<span class="font-bold text-shadow-amber-50 font-serif text-2xl text-center"> 12 CHF</span><br><br>
-								<h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Alfajores</h3>
-								<p class="text-zinc-400 text-sm leading-relaxed">Zarte Kekse, gefüllt mit cremigem Dulce de Leche. Süß, verspielt und einfach unwiderstehlich! </p>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-
-				<div class="text-center mt-12 reveal">
-					<a href="https://wa.me/41765229399?" class="inline-block border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full transition-colors uppercase tracking-wider text-sm font-bold">
-						Vollständiges Menü ansehen
-					</a>
-				</div>
-			</div>
-		</section>
+		<Menu />
 
 		<!-- 5. HISTORIAS (ATMOSPHERE) -->
-		<section translate="yes" id="historias" class="py-20 bg-emerald-50">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-12 reveal">
-					<h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900">Geschichten & Momente</h2>
-				</div>
+		
 				<Slider/>
-			</div>
-		</section>
+		
 
 		<!-- CONTACTO / FOOTER -->
 		<section translate="yes" id="contacto" class="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-800">
@@ -735,15 +122,42 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 		<!-- Script para el menú móvil -->
 		<script>
-			const btn = document.getElementById('mobile-menu-btn');
-			const menu = document.getElementById('mobile-menu');
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
 
-			if(btn && menu) {
-				btn.addEventListener('click', () => {
-					menu.classList.toggle('hidden');
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
 				});
-			}
+			}, observerOptions);
 
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
 			// Script de Animación al hacer Scroll (Intersection Observer)
 			const observerOptions = {
 				root: null,
@@ -796,18 +210,401 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 			
 		</script>
-		<script>
-		const menu = document.getElementById("mobile-menu");
-		const btn = document.getElementById("mobile-menu-btn");
+		
+	</body>
+	
+</html>
+		</section>
 
-		if (menu) {
-			menu.querySelectorAll("a").forEach(a => {
-			a.addEventListener("click", () => {
-				menu.classList.add("hidden");
-				btn?.setAttribute("aria-expanded", "false");
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
 			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
 			});
-		}
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+		</section>
+
+		<!-- BOTÓN FLOTANTE WHATSAPP -->
+		
+		<a href="https://wa.me/41765229399?" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+			<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.347-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+		</a>
+
+		<!-- Script para el menú móvil -->
+		<script>
+			// Script de Animación al hacer Scroll (Intersection Observer)
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach((el) => {
+				el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+				observer.observe(el);
+			});
+
+			// Script del Carrusel
+			const carousel = document.getElementById('menu-carousel');
+			const prevBtn = document.getElementById('prev-slide');
+			const nextBtn = document.getElementById('next-slide');
+
+			if (carousel && prevBtn && nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtn.addEventListener('click', () => {
+					carousel.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			// Script del Carrusel Postres (NUEVO)
+			const carouselDessert = document.getElementById('dessert-carousel');
+			const prevBtnDessert = document.getElementById('prev-slide-dessert');
+			const nextBtnDessert = document.getElementById('next-slide-dessert');
+
+			if (carouselDessert && prevBtnDessert && nextBtnDessert) {
+				nextBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: 350, behavior: 'smooth' });
+				});
+				prevBtnDessert.addEventListener('click', () => {
+					carouselDessert.scrollBy({ left: -350, behavior: 'smooth' });
+				});
+			}
+
+			
 		</script>
 		
 	</body>
