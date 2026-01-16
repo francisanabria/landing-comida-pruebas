@@ -1,73 +1,106 @@
 ---
-import Chef from "./Chef.astro";
-import Pilosophie from "./Pilosophie.astro";
-
-// TabsAboutDE.astro
+// AboutTabs.astro
+// Importamos tus secciones existentes
+import Chef from './Chef.astro'
+import History from './History.astro';
+import Pilosophie from './Pilosophie.astro';
 ---
-<section class="mx-auto max-w-5xl px-4 py-16">
-  <!-- Tabs -->
-  <div class="flex justify-center gap-2">
-    <button
-      data-tab="chef"
-      class="tab-btn rounded-full px-6 py-2 text-sm font-semibold transition bg-emerald-500 text-white"
-    >
-      Unsere Köchin
-    </button>
 
-    <button
-      data-tab="philosophie"
-      class="tab-btn rounded-full px-6 py-2 text-sm font-semibold transition bg-slate-100 text-slate-600"
-    >
-      Philosophie
-    </button>
+<section id="pestana"  class="py-10 bg-slate-50 overflow-hidden sm:p-20">
+  <div class="max-w-[1400px] mx-auto"> 
+    
+    <div class="flex justify-start md:justify-center gap-3 mb-5 px-4 overflow-x-auto flex-nowrap scrollbar-hide">
+      <button 
+        class="tab-btn active whitespace-nowrap px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded-t-[40px] font-bold transition-all bg-emerald-700 text-white shadow-xl z-20 relative" 
+        data-target="wrapper-chef">
+        
+      Unser Koch
+      </button>
+       <button 
+        class="tab-btn whitespace-nowrap px-6 py-3 md:px-8 md:py-20 text-sm md:text-base rounded-t-[40px] font-bold transition-all bg-slate-200 text-slate-600 hover:bg-slate-300 shadow-sm" 
+        data-target="wrapper-historia">
+        
+        Geschichte
+      </button>
+      <button 
+        class="tab-btn whitespace-nowrap px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded-t-[40px] font-bold transition-all bg-slate-200 text-slate-600 hover:bg-slate-300 shadow-sm" 
+        data-target="wrapper-filosofia">
+        Pilosophie
+      </button>
+     
+    </div>
 
-    <button
-      data-tab="geschichte"
-      class="tab-btn rounded-full px-6 py-2 text-sm font-semibold transition bg-slate-100 text-slate-600"
-    >
-      Geschichte
-    </button>
+    <div class="relative bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-10 rounded-[60px]">
+      
+      <div id="wrapper-chef" class="tab-content block animate-fade-in py-20 px-4 md:px-10">
+        <Chef/>
+      </div>
+      
+      <div id="wrapper-historia" class="bg-zinc-900 tab-content hidden animate-fade-in py-20 px-4 md:px-10 rounded-[60px]">
+        <History/>
+      </div>
+
+      <div id="wrapper-filosofia" class=" bg-white tab-content hidden animate-fade-in py-20 px-4 md:px-10 rounded-[60px]">
+        <Pilosophie/>
+      </div>
+
+      
+
+    </div>
   </div>
+</section>
 
-  <!-- Content -->
-  <div class="mt-10 rounded-3xl bg-white p-8 shadow-lg">
-    <div id="chef" class="tab-content">
-      <h3 class="mb-3 text-2xl font-bold">Unsere Köchin</h3>
-      <Chef/>
-    </div>
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
 
-    <div id="philosophie" class="tab-content hidden">
-      <h3 class="mb-3 text-2xl font-bold">Unsere Philosophie</h3>
-     <Pilosophie/>
-    </div>
+  /* Efecto de elevación para la pestaña activa */
+  .tab-btn.active {
+    transform: translateY(-8px);
+    transition: all 0.4s ease;
+  }
 
-    <div id="geschichte" class="tab-content hidden">
-      <h3 class="mb-3 text-2xl font-bold">Unsere Geschichte</h3>
-      <History/>
-    </div>
-  </div>
+  /* Ocultar scrollbar manteniendo funcionalidad */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+</style>
 
-  <!-- Script -->
-  <script is:inline>
-    const buttons = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
+<script>
+  function setupTabNavigation() {
+    const btns = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
 
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        buttons.forEach((b) => {
-          b.classList.remove("bg-emerald-500", "text-white");
-          b.classList.add("bg-slate-100", "text-slate-600");
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+
+        btns.forEach(b => {
+          // Quitamos el color turquesa viejo y el verde nuevo por si acaso
+          b.classList.remove('active', 'bg-[#26d0ce]', 'bg-emerald-600', 'bg-emerald-700', 'text-white', 'shadow-xl');
+          b.classList.add('bg-slate-200', 'text-slate-600');
         });
 
-        contents.forEach((c) => c.classList.add("hidden"));
+        // Aplicamos el nuevo color esmeralda al botón clickeado
+        btn.classList.add('active', 'bg-emerald-700', 'text-white', 'shadow-xl');
+        btn.classList.remove('bg-slate-200', 'text-slate-600');
 
-        btn.classList.add("bg-emerald-500", "text-white");
-        btn.classList.remove("bg-slate-100", "text-slate-600");
-
-        document
-          .getElementById(btn.dataset.tab)
-          .classList.remove("hidden");
+        contents.forEach(c => c.classList.add('hidden'));
+        const target = document.getElementById(targetId);
+        if (target) target.classList.remove('hidden');
       });
     });
-  </script>
-</section>
+  }
+  
+  setupTabNavigation();
+  document.addEventListener('astro:after-swap', setupTabNavigation);
+</script>
