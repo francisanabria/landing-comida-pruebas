@@ -1,6 +1,6 @@
 ---
 ---
-<nav class="fixed w-full z-50 text-white transition-all duration-300 shadow-lg">
+<nav id="navbar" class="fixed w-full z-50 text-white transition-transform duration-300 shadow-lg">
     <!-- Fondo con textura (Madera oscura) -->
     <div class="absolute inset-0 -z-10 overflow-hidden bg-zinc-900">
         <img src="https://images.unsplash.com/photo-1615803795039-3829ee30516d?q=80&w=2070&auto=format&fit=crop" alt="Textura Header" class="w-full h-full object-cover opacity-20" />
@@ -62,6 +62,8 @@
 <script>
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
 
     if(btn && menu) {
         // Toggle menu
@@ -74,7 +76,22 @@
             a.addEventListener("click", () => {
                 menu.classList.add("hidden");
                 btn.setAttribute("aria-expanded", "false");
+                // Esconder navbar al hacer clic para ver el título de la sección limpio
+                if(navbar) navbar.classList.add('-translate-y-full');
             });
         });
     }
+
+    // Lógica de Scroll: Esconder al bajar, mostrar al subir
+    window.addEventListener('scroll', () => {
+        if (!navbar) return;
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > lastScrollY && currentScrollY > 10) {
+            navbar.classList.add('-translate-y-full');
+        } else {
+            navbar.classList.remove('-translate-y-full');
+        }
+        lastScrollY = currentScrollY;
+    }, { passive: true });
 </script>

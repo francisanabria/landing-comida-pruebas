@@ -5,14 +5,14 @@ import History from './History.astro';
 import Pilosophie from './Pilosophie.astro';
 ---
 
-<section id="pestana" class="py-5 bg-slate-50 overflow-hidden px-4 sm:px-10 md:px-20">
-  <div class="max-w-[1400px] mx-auto"> 
+<section class="py-0 md:py-3  bg-slate-50 overflow-hidden px-4 sm:px-10 md:px-20">
+  <div  class="max-w-[1400px] mx-auto"> 
     
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 max-w-5xl mx-auto relative z-20">
+    <div id="pestana" class="scroll-mt-24 md:scroll-mt-32 pt-10 md:pt-16 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-0 max-w-5xl mx-auto relative z-20">
       <button 
         class="tab-btn active w-full px-6 py-4 text-sm md:text-base rounded-t-[30px] sm:rounded-t-[40px] font-bold transition-all bg-emerald-700 text-white shadow-xl relative" 
         data-target="wrapper-chef">
-        Unser Koch
+        Philosophie  
       </button>
       
       <button 
@@ -24,14 +24,14 @@ import Pilosophie from './Pilosophie.astro';
       <button 
         class="tab-btn w-full px-6 py-4 text-sm md:text-base rounded-t-[30px] sm:rounded-t-[40px] font-bold transition-all bg-slate-200 text-slate-600 hover:bg-slate-300 shadow-sm" 
         data-target="wrapper-filosofia">
-        Philosophie
+       Unser Koch
       </button>
     </div>
 
     <div class="relative bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-10 rounded-[40px] md:rounded-[60px] -mt-1">
       
       <div id="wrapper-chef" class="tab-content block animate-fade-in py-12 md:py-20 px-6 md:px-16">
-        <Chef/>
+      <Pilosophie/>
       </div>
       
       <div id="wrapper-historia" class="tab-content hidden animate-fade-in py-12 md:py-20 px-6 md:px-16 bg-zinc-900 text-white rounded-[40px] md:rounded-[60px]">
@@ -39,7 +39,7 @@ import Pilosophie from './Pilosophie.astro';
       </div>
 
       <div id="wrapper-filosofia" class="tab-content hidden animate-fade-in py-12 md:py-20 px-6 md:px-16 bg-white rounded-[40px] md:rounded-[60px]">
-        <Pilosophie/>
+          <Chef/> 
       </div>
 
     </div>
