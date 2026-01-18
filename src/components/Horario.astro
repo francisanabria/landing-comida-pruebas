@@ -4,17 +4,17 @@
     <h2 class="text-center text-2xl font-bold text-[#004d40] mb-8">Wie bestelle ich bei Mamey?</h2>
 
     <div class="flex justify-around md:hidden mb-6 border-b pb-4">
-      <button data-target="tab-calendar" class="tab-toggle-btn flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
+      <button data-target="tab-calendar" class="tab-toggle-btn animate-pulse flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5z" />
         </svg>
       </button>
-      <button data-target="tab-clock" class="tab-toggle-btn flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
+      <button data-target="tab-clock" class="tab-toggle-btn animate-pulse flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </button>
-      <button data-target="tab-delivery" class="tab-toggle-btn flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
+      <button data-target="tab-delivery" class="tab-toggle-btn animate-pulse flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full shadow-md border border-emerald-500 text-white transition-all hover:bg-emerald-700 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-emerald-500 active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.713" />
         </svg>
@@ -81,6 +81,9 @@
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
+      // Detener la animación al hacer clic para que no sea molesto
+      btn.classList.remove('animate-pulse');
+      
       const targetId = btn.getAttribute('data-target');
       const targetContent = document.getElementById(targetId);
 
