@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ScrollAnimations from '../components/ScrollAnimations.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon3.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Fuentes elegantes: Playfair Display (Titulos) y Lato (Texto) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
+		<Navbar />
+		<slot />
+		<Footer />
+		<ScrollAnimations />
+	</body>
+</html>

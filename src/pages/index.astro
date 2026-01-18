@@ -1,15 +1,12 @@
 ---
-import "../styles/global.css"
 
 import Slider from '../components/Slider.astro';
-import Navbar from '../components/Navbar.astro';
 import Home from '../components/Home.astro';
 import Menu from '../components/Menu.astro';
-import Footer from '../components/Footer.astro';
-import ScrollAnimations from '../components/ScrollAnimations.astro';
 import ContactCard from '../components/ContactCard.astro';
 import Pestana from '../components/Pestana.astro';
-import Horario from "../components/horario.astro";
+import Horario from "../components/Horario.astro";
+import MainLayout from '../layouts/MainLayout.astro';
 
 
 
@@ -19,37 +16,22 @@ const whatsappMessage = "Hallo, ich würde gerne mehr über das Menü von Mamey 
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<html lang="de" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/favicon3.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Mamey Latin Soul Food</title>
-		<!-- Fuentes elegantes: Playfair Display (Titulos) y Lato (Texto) -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-	</head>
-
-	<body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
-
-		<!-- 1. NAVBAR -->
-		<Navbar />
+<MainLayout title="Mamey Latin Soul Food">
 
 		<!-- 2. HERO SECTION (HOME) -->
 		<Home />
 
-		<!-- 2. HORARIO -->
-	
-	
-
-		<!-- 4. MENU (HIGHLIGHTS) -->
-		<Menu />
-
 		<!-- 3. ABOUT (chef,philosophie,history) -->
 		
 		<Pestana/>
+
+		<!-- 2. HORARIO -->
+	
+	
+		<!-- 4. MENU (HIGHLIGHTS) -->
+		<Menu />
+
+		
 
 		<!-- 5. HISTORIAS (ATMOSPHERE) -->
 		
@@ -57,11 +39,5 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 		<!-- 5. HISTORIAS (ATMOSPHERE) -->
 		
-		<Footer />
-
-		<!-- Lógica de Animaciones Globales -->
-		<ScrollAnimations />
 		
-	</body>
-	
-</html>
+</MainLayout>

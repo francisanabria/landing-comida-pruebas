@@ -1,0 +1,46 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const brand = "Mamey Latin Soul Food";
+const responsibleName = "Ninoska Smith Borgen";
+const city = "Winterthur";
+const country = "Schweiz";
+const email = "info@mameysoulfood.ch";
+const phone = "+41 76 522 93 99";
+---
+
+<MainLayout title="Impressum | Mamey">
+  <div class="pt-44 pb-10 md:pt-48 md:pb-12 px-4 font-serif bg-[#fdf8f5]">
+    <div class="max-w-3xl mx-auto">
+      
+      <h1 class="text-4xl font-bold text-emerald-900 mb-8 italic">Impressum</h1>
+
+      <div class="bg-white rounded-[40px] border border-emerald-100 p-8 shadow-sm space-y-6">
+        <h2 class="text-xl font-bold text-emerald-800">{brand}</h2>
+
+        <div class="space-y-4">
+          <p class="border-b border-zinc-50 pb-2">
+            <span class="block text-xs text-emerald-600 font-bold uppercase">Verantwortlich</span>
+            <span class="text-zinc-900">{responsibleName}</span>
+          </p>
+
+          <p class="border-b border-zinc-50 pb-2">
+            <span class="block text-xs text-emerald-600 font-bold uppercase">Ort</span>
+            <span class="text-zinc-900">{city}, {country}</span>
+          </p>
+
+          <p class="border-b border-zinc-50 pb-2">
+            <span class="block text-xs text-emerald-600 font-bold uppercase">E-Mail</span>
+            <a href={`mailto:${email}`} class="text-emerald-700 underline">{email}</a>
+          </p>
+
+          <p>
+            <span class="block text-xs text-emerald-600 font-bold uppercase">Telefon</span>
+            <a href={`tel:${phone}`} class="text-emerald-700 underline">{phone}</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</MainLayout>
