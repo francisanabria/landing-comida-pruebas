@@ -9,6 +9,7 @@ import Footer from '../components/Footer.astro';
 import ScrollAnimations from '../components/ScrollAnimations.astro';
 import ContactCard from '../components/ContactCard.astro';
 import Pestana from '../components/Pestana.astro';
+import Horario from "../components/horario.astro";
 
 
 
@@ -21,7 +22,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 <html lang="de" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" type="image/png" href="/favicon3.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Mamey Latin Soul Food</title>
@@ -38,15 +39,17 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 		<!-- 2. HERO SECTION (HOME) -->
 		<Home />
+
+		<!-- 2. HORARIO -->
 	
+		<Horario/>
+
+		<!-- 4. MENU (HIGHLIGHTS) -->
+		<Menu />
 
 		<!-- 3. ABOUT (chef,philosophie,history) -->
 		
 		<Pestana/>
-
-
-		<!-- 4. MENU (HIGHLIGHTS) -->
-		<Menu />
 
 		<!-- 5. HISTORIAS (ATMOSPHERE) -->
 		
