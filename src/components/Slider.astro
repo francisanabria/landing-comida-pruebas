@@ -15,7 +15,7 @@ const slides = [
   <div class="swiper-wrapper">
     {slides.map((slide) => (
       <div class="swiper-slide !w-80 !h-[30rem] relative group shadow-2xl rounded-xl overflow-hidden">
-        <img src={slide.img} class="w-full h-full object-cover" alt={slide.title} />
+        <img src={slide.img} class="w-full h-full object-cover pointer-events-none select-none" alt={slide.title} />
         
         <div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-white text-center">
           <h2 class="text-3xl font-serif tracking-[0.3em] uppercase">{slide.title}</h2>
