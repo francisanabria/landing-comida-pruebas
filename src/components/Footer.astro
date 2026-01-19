@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
             <!-- Columna 1: Logo y Info -->
             <div class="flex flex-col items-center md:items-start">
                 <!-- SUSTITUIR: src="/images/logo-blanco.png" -->
-                <img src="/images/logo-blanco.png" onerror="this.style.display='none'" alt="Mamey Logo" class="h-24 mb-6 opacity-80" />
+                <img src="/images/fondo 3.png" onerror="this.style.display='none'" alt="Mamey Logo" class="h-32 mb-6 opacity-80" />
                 <h3 class="text-2xl font-serif text-white mb-4 block md:hidden">Mamey</h3>
                 <p class="text-sm leading-relaxed max-w-xs">
                     Latin Soul Food. Wo Eleganz auf Tradition trifft. Kommen Sie und erleben Sie es.
@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <!-- Columna 2: Contacto Directo -->
-            <div>
+            <div class="flex flex-col items-center md:items-start">
                 <h4 class="text-white font-bold uppercase tracking-widest mb-6">Kontaktieren Sie uns</h4>
                 <ul class="space-y-4">
                     <li class="flex items-center justify-center md:justify-start gap-3">
@@ -41,28 +41,26 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <!-- Columna 3: Horarios -->
-            <div>
+            <div class="flex flex-col items-center md:items-start">
                 <h4 class="text-white font-bold uppercase tracking-widest mb-6">Öffnungszeiten</h4>
-                <ul class="space-y-2 text-sm">
-                    <li class="flex justify-between md:justify-start gap-8">
-                        <span class="text-emerald-500 font-bold">Mi – So</span>
-                        
+                <ul class="space-y-4 text-sm">
+                    <li class="flex flex-col items-center md:items-start gap-1">
+                        <span class="text-emerald-500 font-bold">Mittwoch – Sonntag</span>
+                        <span>Montag & Dienstag geschlossen</span>
                     </li>
-                    <li class="flex justify-between md:justify-start gap-8">
-                        <span class="text-emerald-500 font-bold">Bestellungen:</span>
+                    <li class="flex flex-col items-center md:items-start gap-1">
+                        <span class="text-emerald-500 font-bold">Bestellzeiten</span>
                         <span>09:00 – 15:00 Uhr</span>
+                        <span class="text-zinc-500 text-xs">(min. 2 Stunden Vorlauf)</span>
                     </li>
-                    <li class="flex justify-between md:justify-start gap-8">
-                        <span class="text-emerald-500 font-bold">Lieferung Mittag:</span>
+                    <li class="flex flex-col items-center md:items-start gap-1">
+                        <span class="text-emerald-500 font-bold">Lieferzeiten</span>
                         <span>11:30 – 14:00 Uhr</span>
-                    </li>
-                    <li class="flex justify-between md:justify-start gap-8">
-                        <span class="text-emerald-500 font-bold">Lieferung Abend:</span>
                         <span>18:00 – 21:00 Uhr</span>
                     </li>
-                    <li class="flex justify-between md:justify-start gap-8">
-                        <span class="text-emerald-500 font-bold">Mo – Di:</span>
-                        <span>Geschlossen</span>
+                    <li class="flex flex-col items-center md:items-start gap-1 pt-2">
+                        <span class="text-emerald-500 font-bold">Hinweis:</span>
+                        <span>Bestellzeit verpasst? Schreiben Sie uns gerne.</span>
                     </li>
                 </ul>
             </div>

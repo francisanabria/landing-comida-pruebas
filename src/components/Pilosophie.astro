@@ -18,7 +18,7 @@
             </div>
             <div class="order-1 xl:order-2 reveal">
                 <h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">Unsere Philosophie</h3>
-                <h2 class="text-4xl xl:text-5xl font-serif font-bold text-zinc-900 mb-6">Der Rhythmus unserer Kultur auf deinem Tisch</h2>
+                <h2 class="text-3xl md:text-4xl xl:text-5xl font-serif font-bold text-zinc-900 mb-6">Der Rhythmus unserer Kultur auf deinem Tisch</h2>
                 <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
                     In Lateinamerika ist<span class="font-bold text-zinc-800"> Mamey</span>
                     
@@ -28,16 +28,39 @@
                     die Musik, die durch offene Türen strömt,
                     und das Lachen, das an einem liebevoll gedeckten Tisch entsteht.
                 </p>
+                <div id="pilosophie-medium" class="hidden md:block">
                     <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
                      Deshalb trägt unser Projekt den Namen Mamey.
                     Wir bringen diesen Geist der Verbundenheit in jedes Gericht,
                     indem wir Tradition mit einem modernen Touch verbinden:
                     authentisch, raffiniert und voller Seele.</p>
+                </div>
+                <div id="pilosophie-more" class="hidden">
                     <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
                     Mamey steht für Geschmack, Zuhause und lateinamerikanisches Erbe,
                     serviert mit Liebe und dem Rhythmus unserer Kultur.</p>
-                
+                </div>
+                <button id="pilosophie-btn" class="text-emerald-600 font-semibold mt-2 hover:underline focus:outline-none">
+                    Mehr anzeigen
+                </button>
             </div>
         </div>
     </div>
+    <script>
+        const btn = document.getElementById('pilosophie-btn');
+        const moreText = document.getElementById('pilosophie-more');
+        const mediumText = document.getElementById('pilosophie-medium');
+        btn?.addEventListener('click', () => {
+            if (moreText?.classList.contains('hidden')) {
+                moreText.classList.remove('hidden');
+                mediumText?.classList.remove('hidden');
+                btn.textContent = 'Weniger anzeigen';
+            } else {
+                moreText?.classList.add('hidden');
+                mediumText?.classList.add('hidden');
+                btn.textContent = 'Mehr anzeigen';
+                btn.closest('.reveal')?.querySelector('h2')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    </script>
   <!-- </section>-->

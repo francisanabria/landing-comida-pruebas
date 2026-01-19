@@ -17,14 +17,14 @@
       </div>
       <div class="order-1 xl:order-2 reveal">
         <h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">LERNE MICH KENNEN</h3>
-        <h2 class="text-4xl xl:text-5xl font-serif font-bold text-zinc-900 mb-6">Unsere Chefköchin</h2>
+        <h2 class="text-3xl md:text-4xl xl:text-5xl font-serif font-bold text-zinc-900 mb-6">Unsere Chefköchin</h2>
         <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
           Hallo! Ich bin Ninoska Smith Borgen, gebürtig aus Costa Rica. Ich bin
            im karibischen Teil Costa Ricas aufgewachsen, umgeben von Strand, 
            herzlichen Menschen und vielen lachenden Momenten. Diese fröhliche
             Umgebung hat mich geprägt und ist bis heute Teil meiner Persönlichkeit.</p>
           
-
+        <div id="chef-medium" class="hidden md:block">
           <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
                    Ich bin Anthropologin von Beruf und liebe die Kultur. Auf meinem beruflichen
            Weg wuchs meine Leidenschaft für die Gastronomie, als ich sah, wie Essen 
@@ -34,11 +34,8 @@
           zu lassen. Meine Ausbildung basiert auf Gourmetküche, kulinarischen
           Techniken und professionellen Arbeitsweisen – ein Weg voller Kreativität,
           Abenteuer und ständigem Lernen.</p>
-
-          <details class="mt-4">
-            <summary class="cursor-pointer text-emerald-600 font-semibold">
-              Mehr anzeigen
-            </summary>
+        </div>
+        <div id="chef-more" class="hidden">
           <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
           Viele Jahre arbeitete ich als Head Chef in verschiedenen Restaurants, 
           leitete wunderbare Küchenteams, entwickelte Menüs und schuf neue kulinarische
@@ -60,9 +57,29 @@
           Dies ist ein Ort, an dem Essen verbindet, berührt und unsere Kulturen feiert.</p>
           <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
           Danke, dass du hier bist. </p>
-          
-          </details>
+        </div>
+        <button id="chef-btn" class="text-emerald-600 font-semibold mt-2 hover:underline focus:outline-none">
+            Mehr anzeigen
+        </button>
+
       </div>
     </div>
   </div>
+  <script>
+    const btn = document.getElementById('chef-btn');
+    const moreText = document.getElementById('chef-more');
+    const mediumText = document.getElementById('chef-medium');
+    btn?.addEventListener('click', () => {
+        if (moreText?.classList.contains('hidden')) {
+            moreText.classList.remove('hidden');
+            mediumText?.classList.remove('hidden');
+            btn.textContent = 'Weniger anzeigen';
+        } else {
+            moreText?.classList.add('hidden');
+            mediumText?.classList.add('hidden');
+            btn.textContent = 'Mehr anzeigen';
+            btn.closest('.reveal')?.querySelector('h2')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+  </script>
 <!-- </section>-->

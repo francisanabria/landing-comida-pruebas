@@ -9,42 +9,59 @@
         <h3 class="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-2">
         UNSERE GESCHICHTE
         </h3>
-        <h2 class="text-4xl xl:text-5xl font-serif font-bold text-white
-	 mb-6">
+        <h2 class="text-3xl md:text-4xl xl:text-5xl font-serif font-bold text-zinc-900 mb-6">
           So entsteht Mamey
         </h2>
-        <p class="text-lg text-zinc-400 mb-3 leading-relaxed">
-          <span class="font-bold text-white">Mamey</span> 
+        <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
+          <span class="font-bold text-zinc-800">Mamey</span> 
 		  ist ein Herzensprojekt, das entstanden ist, um ein Stück der grossen 
 		  Vielfalt der lateinamerikanischen Küche nach Winterthur zu bringen.
 		</p>
-		  <p class="text-lg text-zinc-400 mb-3 leading-relaxed">
+		  <p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 		Wir teilen Aromen, die nach Zuhause schmecken – nach Familie, Erinnerungen 
 		und der Leidenschaft, mit der echte Küche entsteht.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
+        <div id="history-medium" class="hidden md:block">
+		<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 		Auch wenn wir kein klassisches Restaurant mit Tischen sind, sind wir ein To Go-
 		 und Delivery-Konzept, das dir eine besondere, authentische Alternative direkt 
 		 an deine Tür bringt – nach Hause, ins Büro oder wohin du möchtest. Bei Mamey 
 		 findest du Gerichte aus verschiedenen lateinamerikanischen Ländern, denn wir 
 		 glauben an Vielfalt, Farben und die Lebensfreude unserer Gastronomie.</p>
-
-		 <details class="mt-4">
-		<summary class="cursor-pointer text-emerald-600 font-semibold">
-			Mehr anzeigen
-		</summary>
-
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
+        </div>
+        <div id="history-more" class="hidden">
+		<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 		Mamey entsteht auch als Antwort auf das Fehlen eines Konzepts, das die Küche 
 		mehrerer Länder an einem Ort vereint. Unser Wunsch ist es, die lateinamerikanische
 		Gastronomie in ihrer ganzen Breite zu zeigen, unser Angebot stetig zu erweitern 
 		und immer wieder neue Gerichte aus verschiedenen Regionen Lateinamerikas hinzuzufügen.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
+		<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 		Wir arbeiten auf Vorbestellung, denn Qualität steht für uns an erster Stelle.</p>
-		<p class="text-lg text-zinc-400 mb-3 leading-relaxed">
+		<p class="text-lg text-zinc-900 mb-3 leading-relaxed">
 		So können wir jedes Gericht frisch, mit Sorgfalt und Respekt vor der Tradition zubereiten.</p>
-		</details>
+        </div>
+        <button id="history-btn" class="text-emerald-600 font-semibold mt-2 hover:underline focus:outline-none">
+            Mehr anzeigen
+        </button>
+
        
       </div>
+      <script>
+        const btn = document.getElementById('history-btn');
+        const moreText = document.getElementById('history-more');
+        const mediumText = document.getElementById('history-medium');
+        btn?.addEventListener('click', () => {
+            if (moreText?.classList.contains('hidden')) {
+                moreText.classList.remove('hidden');
+                mediumText?.classList.remove('hidden');
+                btn.textContent = 'Weniger anzeigen';
+            } else {
+                moreText?.classList.add('hidden');
+                mediumText?.classList.add('hidden');
+                btn.textContent = 'Mehr anzeigen';
+                btn.closest('.reveal')?.querySelector('h2')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+      </script>
 
       <!-- IMAGEN (DERECHA) -->
       <div class="order-2 reveal">
