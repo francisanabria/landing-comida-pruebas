@@ -1,40 +1,49 @@
 ---
 // src/components/Slider.astro
 const slides = [
-  { img: '/images/g1.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g2.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g3.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g4.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g5.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g6.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g7.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g8.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g9.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g10.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g11.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g12.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g13.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g14.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g15.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g16.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g17.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g18.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g19.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g20.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g21.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g22.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g23.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g24.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g25.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g26.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g27.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g28.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g29.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g30.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g31.jpeg', title: 'YOSEMITE', sub: 'USA' },
-  { img: '/images/g32.jpeg', title: 'ALPS', sub: 'SWISS' },
-  { img: '/images/g33.jpeg', title: 'CHAMONIX', sub: 'FRANCE' },
-  { img: '/images/g34.jpeg', title: 'YOSEMITE', sub: 'USA' },
+  { img: '/images/g1.jpeg' },
+  { img: '/images/g2.jpeg' },
+  { img: '/images/g3.jpeg' },
+  { img: '/images/g4.jpeg' },
+  { img: '/images/g5.jpeg' },
+  { img: '/images/g6.jpeg' },
+  { img: '/images/g7.jpeg' },
+  { img: '/images/g8.jpeg' },
+  { img: '/images/g9.jpeg' },
+  { img: '/images/g10.jpeg' },
+  { img: '/images/g11.jpeg' },
+  { img: '/images/g12.jpeg' },
+  { img: '/images/g13.jpeg' },
+  { img: '/images/g14.jpeg' },
+  { img: '/images/g15.jpeg' },
+  { img: '/images/g16.jpeg' },
+  { img: '/images/g17.jpeg' },
+  { img: '/images/g18.jpeg' },
+  { img: '/images/g19.jpeg' },
+  { img: '/images/g20.jpeg' },
+  { img: '/images/g21.jpeg' },
+  { img: '/images/g22.jpeg' },
+  { img: '/images/g23.jpeg' },
+  { img: '/images/g24.jpeg' },
+  { img: '/images/g25.jpeg' },
+  { img: '/images/g26.jpeg' },
+  { img: '/images/g27.jpeg' },
+  { img: '/images/g28.jpeg' },
+  { img: '/images/g29.jpeg' },
+  { img: '/images/g30.jpeg' },
+  { img: '/images/g31.jpeg' },
+  { img: '/images/g32.jpeg' },
+  { img: '/images/g33.jpeg' },
+  { img: '/images/g34.jpeg' },
+  { img: '/images/g35.jpeg' },
+  { img: '/images/g36.jpeg' },
+  { img: '/images/g37.jpeg' },
+  { img: '/images/g38.jpeg' },
+  { img: '/images/g39.jpeg' },
+  
+
+  
+
 
   
 ];
@@ -51,14 +60,7 @@ const slides = [
   <div class="swiper-wrapper z-10">
     {slides.map((slide) => (
       <div class="swiper-slide !w-72 !h-[25rem] md:!w-80 md:!h-[30rem] relative group shadow-2xl rounded-xl overflow-hidden">
-        <img src={slide.img} class="w-full h-full object-cover pointer-events-none select-none" alt={slide.title} />
-        
-        <div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-white text-center">
-          <h2 class="text-3xl font-serif tracking-[0.3em] uppercase">{slide.title}</h2>
-          <p class="text-2xl font-bold tracking-widest">{slide.sub}</p>
-          <div class="w-10 h-[1px] bg-white my-4"></div>
-         
-        </div>
+        <img src={slide.img} class="w-full h-full object-cover pointer-events-none select-none" alt="Galerie Bild" />
       </div>
     ))}
   </div>
