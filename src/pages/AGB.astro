@@ -2,13 +2,16 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="AGB | Mamey">
+<MainLayout title="AGB | Mamey - Latin Soul Food Winterthur">
 <div class="bg-zinc-50 min-h-0 h-auto w-full pt-44 pb-10 md:pt-48 md:pb-12 px-4 sm:px-6 lg:px-8 font-serif">
     <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-zinc-100">
         
-        <h1 class="text-2xl font-bold text-zinc-900 mb-6 border-b border-zinc-200 pb-4">
+        <h1 class="text-2xl font-bold text-zinc-900 mb-2">
             Allgemeine Geschäftsbedingungen (AGB)
         </h1>
+        <p class="text-lg text-zinc-600 mb-6 border-b border-zinc-200 pb-4">
+            Mamey – Latin Soul Food Delivery, Winterthur
+        </p>
         
         <section class="mb-6">
             <h2 class="text-base font-bold text-zinc-900 mb-2">1. Geltungsbereich</h2>
@@ -24,8 +27,14 @@ import MainLayout from '../layouts/MainLayout.astro';
             <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
                 Die auf der Website dargestellten Produkte dienen als Orientierung und können je nach Verfügbarkeit variieren.
             </p>
-            <p class="text-sm text-zinc-700 leading-relaxed">
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
                 Der Vertrag kommt zustande, sobald wir Ihre Bestellung per Nachricht oder E-Mail bestätigen.
+            </p>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                <strong>Mindestbestellwert: CHF 30.–</strong>
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Allfällige Lieferkosten werden zusätzlich berechnet.
             </p>
         </section>
 
@@ -40,7 +49,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 Preisänderungen bleiben vorbehalten.
             </p>
             <p class="text-sm text-zinc-700 leading-relaxed">
-                Allfällige Lieferkosten werden separat ausgewiesen.
+                Mamey ist derzeit nicht mehrwertsteuerpflichtig gemäss Art. 10 Abs. 2 MWSTG.
             </p>
         </section>
 
@@ -81,7 +90,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 Stornierungen sind so früh wie möglich mitzuteilen.
             </p>
             <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
-                Für personalisierte oder größere Bestellungen bitten wir um eine Vorankündigung von mindestens 12 Stunden.
+                Für personalisierte oder grössere Bestellungen bitten wir um eine Vorankündigung von mindestens 12 Stunden.
             </p>
             <p class="text-sm text-zinc-700 leading-relaxed">
                 Bei kurzfristigen Stornierungen behalten wir uns vor, bereits entstandene Kosten in Rechnung zu stellen.
@@ -91,23 +100,103 @@ import MainLayout from '../layouts/MainLayout.astro';
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-6">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">7. Beanstandungen</h2>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">7. Lebensmittelrechtliche Angaben</h2>
             <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
-                Allfällige Beanstandungen sind am Tag der Lieferung mitzuteilen.
+                Der Betrieb ist gemäss Art. 20/21 LMG beim Kanton Zürich gemeldet.
+            </p>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Alle Produkte entsprechen den gesetzlichen Anforderungen gemäss Lebensmittelgesetzgebung (LMG/LIV).
             </p>
             <p class="text-sm text-zinc-700 leading-relaxed">
-                Wir bemühen uns um eine faire Lösung für beide Seiten.
+                Informationen zu Allergenen und zur Herkunft der Zutaten sind vor der Bestellung erhältlich.
             </p>
         </section>
 
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-6">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">8. Haftung</h2>
-            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">Mamey – Latin Soul Food übernimmt keine Haftung für:</p>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">8. Herkunft des Fleisches</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Die bei Mamey verwendeten Fleischprodukte stammen ausschliesslich aus der Schweiz:
+            </p>
+            <ul class="list-disc ml-5 text-sm text-zinc-700 space-y-1 mb-2">
+                <li>Rindfleisch: Schweiz</li>
+                <li>Poulet: Schweiz</li>
+                <li>Schweinefleisch: Schweiz</li>
+            </ul>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Allfällige Abweichungen werden transparent deklariert.
+            </p>
+        </section>
+
+        <hr class="border-zinc-300 my-6">
+
+        <section class="mb-6">
+            <h2 class="text-base font-bold text-zinc-900 mb-2">9. Allergene</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Unsere Gerichte können folgende Allergene enthalten:
+                Gluten, Milchprodukte (Laktose), Eier, Nüsse, Soja, Senf, Sellerie, Sesam.
+            </p>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Bitte informieren Sie uns vor der Bestellung über allfällige Allergien oder Unverträglichkeiten.
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Trotz sorgfältiger Zubereitung kann eine unbeabsichtigte Kreuzkontamination nicht vollständig ausgeschlossen werden.
+            </p>
+        </section>
+
+        <hr class="border-zinc-300 my-6">
+
+        <section class="mb-6">
+            <h2 class="text-base font-bold text-zinc-900 mb-2">10. Abbildungen der Menüs</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Die Bilder der Menüs dienen ausschliesslich zu Illustrationszwecken.
+            </p>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Fotos in der Galerie sowie unter „Momente“ stammen aus eigener Produktion und zeigen reale Produkte und Situationen.
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Die tatsächliche Präsentation der Gerichte kann bei den Menübildern leicht abweichen.
+            </p>
+        </section>
+
+        <hr class="border-zinc-300 my-6">
+
+        <section class="mb-6">
+            <h2 class="text-base font-bold text-zinc-900 mb-2">11. Widerrufsrecht</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Frische Lebensmittel sind gemäss Art. 18 Abs. 1 lit. b OR vom Widerrufsrecht ausgeschlossen.
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Eine Stornierung ist nur möglich, solange die Zubereitung noch nicht begonnen hat.
+            </p>
+        </section>
+
+        <hr class="border-zinc-300 my-6">
+
+        <section class="mb-6">
+            <h2 class="text-base font-bold text-zinc-900 mb-2">12. Gewährleistung & Beanstandungen</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Beanstandungen bei verderblichen Waren müssen am Tag der Lieferung gemeldet werden.
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Für andere Mängel gilt die gesetzliche Gewährleistungsfrist von 2 Jahren gemäss Art. 210 OR.
+            </p>
+        </section>
+
+        <hr class="border-zinc-300 my-6">
+
+        <section class="mb-6">
+            <h2 class="text-base font-bold text-zinc-900 mb-2">13. Haftung</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Mamey haftet nur bei grober Fahrlässigkeit oder Vorsatz.
+            </p>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Keine Haftung wird übernommen für:
+            </p>
             <ul class="list-disc ml-5 text-sm text-zinc-700 space-y-1 mb-2">
                 <li>nicht gemeldete Allergien</li>
-                <li>unsachgemäße Verwendung der Produkte</li>
+                <li>unsachgemässe Verwendung der Produkte</li>
                 <li>Lieferverzögerungen aufgrund höherer Gewalt</li>
             </ul>
         </section>
@@ -115,34 +204,44 @@ import MainLayout from '../layouts/MainLayout.astro';
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-6">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">9. Hygiene und Qualität</h2>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">14. Datenschutz</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Die Bearbeitung personenbezogener Daten erfolgt gemäss geltendem Datenschutzgesetz (DSG).
+            </p>
             <p class="text-sm text-zinc-700 leading-relaxed">
-                Unsere Produkte werden unter Einhaltung strenger Hygiene- und Lebensmittelvorschriften zubereitet.
+                Details finden Sie in unserer Datenschutzerklärung.
             </p>
         </section>
 
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-6">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">10. Datenschutz</h2>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">15. Gerichtsstand</h2>
+            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">
+                Gerichtsstand ist Winterthur (ZH).
+            </p>
             <p class="text-sm text-zinc-700 leading-relaxed">
-                Personenbezogene Daten werden gemäß unserer Datenschutzerklärung verarbeitet.
+                Es gilt ausschliesslich Schweizer Recht.
             </p>
         </section>
 
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-6">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">11. Anwendbares Recht</h2>
-            <p class="text-sm text-zinc-700 mb-2 leading-relaxed">Es gilt schweizerisches Recht.</p>
-            <p class="text-sm text-zinc-700 leading-relaxed">Gerichtsstand ist die Gerichtsstand ist in Winterthur ZH.</p>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">16. Salvatorische Klausel</h2>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Sollte eine Bestimmung dieser AGB unwirksam sein,
+                bleiben die übrigen Bestimmungen davon unberührt.
+            </p>
         </section>
 
         <hr class="border-zinc-300 my-6">
 
         <section class="mb-12">
-            <h2 class="text-base font-bold text-zinc-900 mb-2">12. Änderungen</h2>
-            <p class="text-sm text-zinc-700 leading-relaxed">Wir behalten uns das Recht vor, diese AGB jederzeit anzupassen.</p>
+            <h2 class="text-base font-bold text-zinc-900 mb-2">17. Änderungen</h2>
+            <p class="text-sm text-zinc-700 leading-relaxed">
+                Wir behalten uns das Recht vor, diese AGB jederzeit anzupassen.
+            </p>
         </section>
 
     </div>
