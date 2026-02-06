@@ -1,4 +1,22 @@
 ---
+import { client } from "../sanityClient.js";
+
+const platos = await client.fetch(`*[_type == "plato"] | order(order asc) {
+  nombre,
+  descripcion,
+  precio,
+  "imageUrl": image.asset->url,
+  "countryIconUrl": countryIcon.asset->url,
+  vegetarianOption,
+  order
+}`);
+
+const bebidasPostres = await client.fetch(`*[_type == "bebidaPostre"] | order(order asc) {
+  nombre,
+  descripcion,
+  precio,
+  "imageUrl": image.asset->url
+}`);
 ---
 <section translate="yes" id="menu" class="py-20 bg-zinc-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,220 +39,28 @@
             <!-- Scroll Area -->
             <div id="menu-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
                 
-                <!-- Plato 1 -->
+                {platos.map((plato) => (
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
                     <div class="overflow-hidden h-64">
                         <img 
-                            src="/images/rice n beans.PNG" 
-                            alt="Rice n beans caribeño - Costa Rica Spezialität in Winterthur" 
+                            src={plato.imageUrl} 
+                            alt={plato.nombre} 
                             class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
                         />
                     </div>
                     <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/cr.png" class="inline w-10 h-10 align-middle" />  Rice n beans caribeño  </h3>
-                     <p class="text-zinc-400 text-sm leading-relaxed">Karibischer Klassiker aus Costa Rica mit Reis und roten Bohnen, gekocht in Kokosmilch.
-                                Serviert mit saftiger Pouletkeule und Oberschenkel in karibischer Sauce, knusprigen Patacones und frischem Salat.
-                                Ein Gericht voller Geschmack und lateinamerikanischem Rhythmus, das dich direkt an die Karibikküste Costa Ricas entführt.
-                                </p>
-                          
-                             <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 36 CHF</span><br><br>
-                                <span class=" text-shadow-amber-50 font-serif text-sm ">Vegetarische Option auf Anfrage</span>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">
+                            {plato.countryIconUrl && <img src={plato.countryIconUrl} class="inline w-10 h-10 align-middle" alt="Bandera" /> }
+                            {" " + plato.nombre}
+                        </h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">{plato.descripcion}</p>
+                        <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> {plato.precio} CHF</span>
+                        {plato.vegetarianOption && (
+                            <><br/><br/><span class=" text-shadow-amber-50 font-serif text-sm ">{plato.vegetarianOption && ("Vegetarische Option auf Anfrage")}</span></>
+                        )}
                     </div>
                 </div>
-                <!-- Plato 2 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/picapollo.png" 
-                            alt="Pica Pollo - Dominikanisches Fried Chicken" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/rd.png" class="inline w-10 h-10 align-middle" />  Pica pollo </h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Knusprig frittierte Pouletteile nach dominikanischer Art, aussen goldbraun und innen saftig, voller karibischer Aromen.
-                        Serviert nach Wahl mit knusprigen Tostones oder Crispy Potato Sticks.
-                        Ein echtes karibisches Street-Food-Highlight – herzhaft und unwiderstehlich.
-                        </p>
-                            <span class="font-bold text-shadow-amber-50 font-serif text-21l"> 28 CHF</span>
-</p>
-                    </div>
-                </div>
-                    <!-- Plato 3 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/chileno.jpg" 
-                            alt="Completo Chileno - Hotdog Klassiker"
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6 ">
-                    
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/chile.png" class="inline w-10 h-10 align-middle" />  Completo chileno</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Klassischer chilenischer Hotdog im weichen Brötchen, gefüllt mit einer Wurst aus
-                             einer Mischung von Rind und Schwein, frischen Tomaten, cremiger Avocado und hausgemachter Mayonnaise.
-                        Serviert mit Crispy Potato Sticks.
-                        Ein Street-Food-Klassiker aus Chile – einfach, herzhaft und lecker.
-                        </p>
-                            <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 22 CHF</span>
-                    </div>
-                </div>
-                <!-- Plato 4 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/milanesa.jpg" 
-                            alt="Milanesa Napolitana - Argentinisches Schnitzel" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6 ">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Milanesa napolitana</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed text-left">Paniertes Rindsschnitzel aus zartem, dünn geschnittenem Rindfleisch
-                        oder Pouletbrust-Schnitzel aus saftiger Hähnchenbrust.
-                        Belegt mit aromatischer Tomatensauce und goldbraun überbackenem Käse.
-                        Serviert nach Wahl mit Crispy Potato Sticks oder frischem Salat.
-                        Ein klassischer Genuss aus Argentinien – zart und voller Geschmack.
-                        </p>
-                             <p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 36 CHF</p>
-                    </div>
-                </div>
-                
-                <!-- Plato 5 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/flautas.jpg" 
-                            alt="Flautas - Knusprige Tacos mit Poulet" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6 ">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Flautas</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed ">Knusprige Fladenröllchen, gefüllt mit zart gezupfter Pouletbrust, fein gewürzt und goldbraun fritiert. 
-                            Jede Portion enthält 3 Flautas, serviert mit frischen Beilagen und hausgemachten Saucen, die den Geschmack perfekt abrunden. Ein fröhliches Gericht mit 
-                            schönem Kontrast: außen knusprig, innen saftig – ideal für jeden Moment</p>
-                            <span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 25 CHF</span>
-                    </div>
-                </div>
-                    <!-- Plato 6 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/chivito.jpg" 
-                            alt="Chivito - Uruguayisches Sandwich" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                    
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/uruguay.PNG" class="inline w-10 h-10 align-middle" />  Chivito</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Traditionelles Sandwich aus Uruguay mit zartem Rindssteak, Schinken, knusprigem Speck, 
-                            geschmolzenem Käse, frischem Salat, Tomaten und Ei, serviert in weichem, leicht getoastetem Brot und begleitet von Crispy Potato Sticks. 
-                            Ein herzhafter Klassiker voller Geschmack.</p>
-                                 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 29 CHF</span>
-                    </div>
-                </div>
-                    <!-- Plato 7-->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/lomo.jpg" 
-                            alt="Lomo Saltado - Peruanisches Rindfleischgericht" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Lomo saltado</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Klassisches peruanisches Gericht mit 180 g zartem Rindsfilet, in Streifen geschnitten (Fajita-Style), 
-                            angebraten mit roter Zwiebel und Tomaten, traditionell gewürzt. Serviert mit weissem Reis und hausgemachten Pommes aus frischen Kartoffeln. 
-                            Ein Gericht voller Geschmack mit perfekter Balance.</p>
-                              <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 36 CHF</span>
-                    </div>
-                </div>
-                
-                <!-- Plato 8 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/quesadillas.jpg" 
-                            alt="Quesadillas mit Poulet und Käse" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6 ">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Quesadillas</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Weizentortilla goldbraun geröstet, gefüllt mit Pouletbrust in feinen Streifen, 
-                            angebraten mit Paprika und Zwiebeln, dazu geschmolzener Käse und milde Gewürze. Jede Quesadilla wird in 4 Stücke geschnitten für ein einfaches Geniessen.
-                             Serviert mit frischen Beilagen und hausgemachten Saucen. Aussen getoastet, innen saftig und aromatisch.</p>
-                            <span class="font-bold text-shadow-amber-50 font-serif text-1xl"> 28 CHF</span>
-                    </div>
-                </div>
-                
-                <!-- Plato 9 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/empanadas.jpg" 
-                            alt="Argentinische Empanadas mit Fleisch" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                    
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/arg.png" class="inline w-10 h-10 align-middle" />  Empanadas</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Klassische argentinische Empanadas, gefüllt mit würzigem Rinderhackfleisch und umhüllt von goldbraun 
-                            gebackenem Teig. Jeder Teller enthält 3 Empanadas und wird mit hausgemachtem Chimichurri serviert – für einen herzhaften, ausgewogenen Geschmack.</p>
-                                 <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 22 CHF</span>
-                    </div>
-                </div>
-                
-                <!-- Plato 10-->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/chaufa.jpg" 
-                            alt="Arroz Chaufa - Peruanischer Bratreis" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6 ">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/peru.png" class="inline w-10 h-10 align-middle" />  Arroz Chaufa </h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Klassischer peruanischer Bratreis, zubereitet mit Pouletbrust in Würfel geschnitten, 
-                            verfeinert mit Gemüse und Sojasauce für ein ausgewogenes, aromatisches Geschmackserlebnis. Serviert mit frischem grünem Salat als leichte, 
-                            erfrischende Beilage. Ein saftiges, duftendes Gericht mit orientalisch-kreolischem Charakter.</p><p class="font-bold text-shadow-amber-50 font-serif text-1xl"> 28 CHF</p><br>
-                             <span class=" text-shadow-amber-50 font-serif text-sm ">Vegetarische Option auf Anfrage</span>
-                    </div>
-                </div>
-
-                <!-- Plato 11-->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/nachos.jpg" 
-                            alt="Nachos mit Käse und Guacamole" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"><img src="/images/mexico.png" class="inline w-10 h-10 align-middle" />  Nachos</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Mais-Tortilla-Chips mit geschmolzenem Käse,
-                             wahlweise mit gezupfter Pouletbrust oder Rinderhackfleisch, dazu pürierte Bohnen, frisches Pico de Gallo, 
-                             Sauerrahm und Guacamole. Eine harmonische Kombination aus cremigen und frischen Komponenten.</p>
-                             <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> 29 CHF</span><br><br>
-                             <span class=" text-shadow-amber-50 font-serif text-sm ">Vegetarische Option auf Anfrage</span>
-                    </div>
-                </div>
-    
+                ))}
                 
             </div>
         </div>
@@ -260,123 +86,22 @@
             <!-- Scroll Area -->
             <div id="dessert-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
                 
-                <!-- jugo 1 -->
+                {bebidasPostres.map((item) => (
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
                     <div class="overflow-hidden h-64">
                         <img 
-                            src="/images/guayaba.jpeg" 
-                            alt="Frischer Guayaba Saft" 
+                            src={item.imageUrl} 
+                            alt={item.nombre} 
                             class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
                         />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"> Guayaba Saft</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">
-                        Getränk aus Guavenpüree, sorgfältig gemixt für eine weiche und erfrischende Textur.
-                        Der natürliche Geschmack und das fruchtige Aroma machen ihn zur perfekten Wahl für jede Tageszeit.
-                        Frisch, ausgewogen und voller Charakter.
-
-                        🧊 4 dl</p>
-                        <span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 7 CHF</span>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">{item.nombre}</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">{item.descripcion}</p>
+                        <span class="font-bold text-shadow-amber-50 font-serif text-1xl "> {item.precio} CHF</span>
                     </div>
                 </div>
-                 <!-- jugo 1 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/mamey.jpeg" 
-                            alt="Mamey Saft - Tropische Erfrischung" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Mamey Saft</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Der Favorit des Hauses und ein besonderer Geschmack,
-                         den man nicht überall findet.
-                        Hergestellt aus Mamey-Püree, mit cremiger Konsistenz und intensivem, natürlichem Süssgeschmack.
-                        Ein tropisches Geschmackserlebnis, das die Sinne weckt.<br>
-
-                        🧊 4 dl</p>
-                             <span class="text-1xl font-serif font-bold text-emerald-100 mb-2"> 7 CHF</span>
-                    </div>
-                </div>
-                <!-- jugo 2 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/tamarindo.jpeg" 
-                            alt="Tamarindo Saft" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tamarindo Saft</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Erfrischend und voller Persönlichkeit.
-                            Zubereitet aus Tamarindenpüree, mit einer harmonischen Balance aus süssen und säuerlichen Noten.
-                            Ideal für alle, die einen authentischen und lebendigen Geschmack mögen.
-
-                            🧊 4 dl</p>
-                             <span class="text-1xl font-serif font-bold text-emerald-100 mb-2"> 7 CHF</span>
-                    </div>
-                </div>
-
-
-                <!-- jugo 3 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/guanabana.jpeg" 
-                            alt="Guanabana Saft" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                      
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2"> Guanabana Saft</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Mild, cremig und exotisch.
-                        Hergestellt aus Guanábana-Püree, überzeugt er durch seine samtige Textur und den angenehm süssen Geschmack.
-                        Perfekt zum entspannten Geniessen.🧊 4 dl</p>
-                              <span class="text-1xl font-serif font-bold text-emerald-100 mb-2"> 7 CHF</span>
-                    </div>
-                </div>
-
-                
-                <!-- postre 1-->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/tres leches.jpeg" 
-                            alt="Tres Leches Kuchen" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                       
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Tres Leches</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Ein luftiger Kuchen, getränkt in
-                             drei cremigen Milchsorten. Klassisch, zart und himmlisch saftig – pure lateinamerikanische Liebe. </p>
-                            <span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 9 CHF</span>
-                    </div>
-                </div>
-                    <!-- Postre 2 -->
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-zinc-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                    <div class="overflow-hidden h-64">
-                        <img 
-                            src="/images/fresas.png" 
-                            alt="Pan de Elote - Maiskuchen" 
-                            class="w-full h-full object-cover transform group-hover:scale-110 group-active:scale-110 transition duration-700"
-                        />
-                    </div>
-                    <div class="p-6">
-                        
-                        <h3 class="text-2xl font-serif font-bold text-emerald-100 mb-2">Erdbeeren mit Creme</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Frische, saftige Erdbeeren, serviert mit
-                             einer süssen und cremigen Sauce aus Milch und einem feinen Hauch Vanille. Ein leichtes, 
-                             erfrischendes Dessert – perfekt als süßer Abschluss deiner Mahlzeit.</p>
-                        <span class="font-bold text-shadow-amber-50 font-serif text-1xl text-center"> 9 CHF</span>
-                    </div>
+                ))}
        
 
             </div>

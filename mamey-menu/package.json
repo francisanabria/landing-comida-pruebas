@@ -5,7 +5,7 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
+    "dev": "sanity dev --no-typegen",
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^7.14.1",
     "@sanity/vision": "^5.8.1",
     "react": "^19.1",
     "react-dom": "^19.1",
@@ -26,6 +27,8 @@
     "@types/react": "^19.1",
     "eslint": "^9.28",
     "prettier": "^3.5",
+    "read-pkg": "^5.2.0",
+    "read-pkg-up": "^7.0.1",
     "typescript": "^5.8"
   },
   "prettier": {
