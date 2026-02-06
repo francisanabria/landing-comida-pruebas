@@ -1,32 +1,11 @@
 ---
 // src/components/Slider.astro
-const slides = [
-  { img: '/images/g1.jpeg' },
-  { img: '/images/g2.jpeg' },
-  { img: '/images/g3.jpeg' },
-  { img: '/images/g4.jpeg' },
-  { img: '/images/g5.jpeg' },
-  { img: '/images/g6.jpeg' },
-  { img: '/images/g7.jpeg' },
-  { img: '/images/g8.jpeg' },
-  { img: '/images/g9.jpeg' },
-  { img: '/images/g10.jpeg' },
-  { img: '/images/g11.jpeg' },
-  { img: '/images/g12.jpeg' },
-  { img: '/images/g22.jpeg' },
-  { img: '/images/g13.jpeg' },
-  { img: '/images/g14.jpeg' },
-  { img: '/images/g15.png' },
-  { img: '/images/g16.jpeg' },
-  { img: '/images/g17.jpeg' },
-  { img: '/images/g18.jpeg' },
-  { img: '/images/g19.jpeg' },
-  { img: '/images/g20.jpeg' },
-  { img: '/images/g21.jpeg' },
-  { img: '/images/g23.jpeg' },
+import { client } from "../sanityClient.js";
 
-
-];
+const slides = await client.fetch(`*[_type == "galeria"] | order(order asc) {
+  "img": imagen.asset->url,
+  alt
+}`);
 ---
 <section translate="yes" id="galerie" class="py-15 bg-zinc-900 relative overflow-hidden">
 			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +19,7 @@ const slides = [
   <div class="swiper-wrapper z-10">
     {slides.map((slide) => (
       <div class="swiper-slide !w-72 !h-[25rem] md:!w-80 md:!h-[30rem] relative group shadow-2xl rounded-xl overflow-hidden">
-        <img src={slide.img} class="w-full h-full object-cover pointer-events-none select-none" alt="Mamey Latin Soul Food Gericht und Momente in Winterthur" loading="lazy" />
+        <img src={slide.img} class="w-full h-full object-cover pointer-events-none select-none" alt={slide.alt || "Mamey Latin Soul Food Gericht und Momente in Winterthur"} loading="lazy" />
       </div>
     ))}
   </div>
