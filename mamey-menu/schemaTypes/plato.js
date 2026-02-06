@@ -27,8 +27,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'price',
-      title: 'Price',
+      name: 'precio',
+      title: 'Precio',
       type: 'number',
     },
     {
