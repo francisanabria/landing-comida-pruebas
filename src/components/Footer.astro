@@ -51,18 +51,17 @@ const footerData = await client.fetch(`*[_type == "footer"][0]`);
 
             <!-- Columna 3: Horarios -->
             <div class="flex flex-col items-center md:items-start">
-                <h4 class="text-white font-bold uppercase tracking-widest mb-6">{footerData?.hoursTitle || "Öffnungszeiten"}</h4>
-                <ul class="space-y-4 text-sm">
-                    {footerData?.openingHours?.map((item) => (
-                    <li class="flex flex-col items-center md:items-start gap-1">
-                        {item.label && <span class="text-emerald-500 font-bold">{item.label}</span>}
-                        {item.lines?.map((line) => (
-                            <span class="text-zinc-300">{line}</span>
-                        ))}
-                        {item.note && <span class="text-zinc-500 text-xs">{item.note}</span>}
-                    </li>
-                    ))}
-                </ul>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">ÖFFNUNGSZEITEN</h4>
+                <div class="space-y-4 text-sm flex flex-col items-center md:items-start">
+                    <div class="flex flex-col items-center md:items-start">
+                        <span class="text-zinc-300">📅 Mittwoch – Sonntag</span>
+                        <span class="text-zinc-300">🛵 Uber Eats: 17:00 – 21:30 Uhr</span>
+                    </div>
+                    <div class="flex flex-col items-center md:items-start pt-2">
+                        <span class="text-white font-bold uppercase tracking-widest mb-1">Geschlossen</span>
+                        <span class="text-zinc-300">🔴 Montag & Dienstag</span>
+                    </div>
+                </div>
             </div>
         </div>
         
